@@ -1,0 +1,59 @@
+@use "./_mixins.scss" as mixins;
+
+main {
+    &.page_layout {
+        // grid-template-columns: 1fr 3fr 1fr;
+        justify-content: center;
+    }
+}
+
+section {
+    &.business_list {
+        align-items: center;
+        align-content: center;
+        margin-block-start: 20rem;
+    }
+}
+
+h1 {
+    &.title_ads {
+        @include mixins.font_reusable("Inter", 700, 3rem);
+        margin-block-start: .5rem;
+        text-align: center;
+        line-height: normal;
+        color: #EDEFF8;
+    }
+}
+
+h2 {
+    &.subtitle_ai {
+        @include mixins.font_reusable("Inter", 700, 3rem);
+        justify-content: center;
+        text-align: center;
+        line-height: normal;
+        background: linear-gradient(360deg, #FF7365 0%, #FA4B39 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
+
+h3 {
+    &.ad_roi {
+        @include mixins.font_reusable("Inter", 600, 1rem);
+        margin-block-start: 1.5rem;
+        color: #C5C5D8;
+        text-align: center;
+        line-height: normal;
+    }
+}
+
+p {
+    &.business_type {
+        @include mixins.font_reusable("Inter", 600, 1rem);
+        margin-inline-start: 0.75rem;
+        color: #C9C9DC;
+        text-align: center;
+        line-height: normal;
+    }
+}

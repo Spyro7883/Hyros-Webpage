@@ -1,0 +1,86 @@
+// CSS Reset
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+// Custom vars
+
+:root {
+  --bg-dark-mode: #242424;
+  --bg-light-mode: #ffffff;
+}
+
+// Reusable classes
+
+.d-grid {
+  display: grid;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.clmn-dir {
+  flex-direction: column;
+}
+
+.center-Oy {
+  align-items: center;
+}
+
+.center-Ox {
+  justify-content: center;
+}
+
+.text-center {
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  background: var(--bg-dark-mode);
+  flex-direction: column;
+}
