@@ -2,6 +2,13 @@ import Header from "./components/Header";
 import Image from "next/image";
 import styles from "./styles/home.module.scss";
 
+const businessList = new Array();
+businessList.push("Info / Education");
+businessList.push("E-Commerce");
+businessList.push("Call Funnels");
+businessList.push("Local Agency / Lead Gen");
+businessList.push("Organic / Social Media");
+
 export default function Home() {
   return (
     <>
@@ -31,7 +38,24 @@ export default function Home() {
               Select your business type
             </p>
           </div>
-          {/* <button>center-Oy</button> */}
+          {businessList.map((business_option) => (
+            <>
+              <a
+                className={`${styles.option_type} d-flex center-Oy`}
+                key={business_option}
+              >
+                <p className={styles.business_type}>{business_option}</p>
+                <Image
+                  src="/Logo_Arrow.png"
+                  alt="Arrow Icon"
+                  className={styles.arrow_icon}
+                  width={16}
+                  height={16}
+                  priority
+                />
+              </a>
+            </>
+          ))}
         </section>
       </main>
     </>

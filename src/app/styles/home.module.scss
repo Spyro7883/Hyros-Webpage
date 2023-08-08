@@ -52,8 +52,70 @@ p {
     &.business_type {
         @include mixins.font_reusable("Inter", 600, 1rem);
         margin-inline-start: 0.75rem;
+
         color: #C9C9DC;
         text-align: center;
         line-height: normal;
+
+
+    }
+}
+
+a {
+    &.option_type {
+        width: 15.625rem;
+        height: 2.375rem;
+        padding-inline-start: 1rem;
+        padding-block-end: .2rem;
+        text-align: start;
+        border-radius: 0.5rem;
+        border: 1px solid #747380;
+        background: #393745;
+        position: relative;
+
+        &>p {
+            &.business_type {
+                margin-inline-start: 0;
+            }
+        }
+
+        &:nth-child(2) {
+            margin-block-start: 2rem;
+        }
+
+        &:nth-child(n):not(:first-child) {
+            margin-block-end: 1rem;
+        }
+
+        &:hover {
+            background: linear-gradient(rgb(42, 41, 52) 0%, rgb(38, 36, 48) 100%);
+            border: 1px solid transparent;
+
+            &::before {
+                content: "";
+            }
+        }
+
+        &::before {
+            background: linear-gradient(91.08deg, rgba(146, 235, 196, 0.5) 0%, rgba(20, 221, 137, 0.75) 100%);
+            content: none;
+
+            position: absolute;
+            isolation: isolate;
+            inset: -2px;
+            border-radius: .5rem;
+            z-index: -1;
+            opacity: 1;
+            transition: width 0.3s linear 0s;
+
+
+        }
+    }
+}
+
+img {
+    &.arrow_icon {
+        margin-inline-start: auto;
+        margin-inline-end: 1rem;
     }
 }
