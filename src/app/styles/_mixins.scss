@@ -5,3 +5,10 @@
     font-weight: $weight;
     font-size: $size;
 }
+
+@mixin button_reusable {
+    border-radius: calc(var(--res-screen) * 0.5rem);
+    outline: none;
+    border: none;
+    cursor: pointer;
+}

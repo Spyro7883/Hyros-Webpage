@@ -10,8 +10,11 @@ main {
 section {
     &.business_list {
         align-items: center;
-        align-content: center;
         margin-block-start: 20rem;
+    }
+
+    &.trustpilot_review {
+        margin-block-start: 2.25rem;
     }
 }
 
@@ -31,7 +34,7 @@ h2 {
         justify-content: center;
         text-align: center;
         line-height: normal;
-        background: linear-gradient(360deg, #FF7365 0%, #FA4B39 100%);
+        background: linear-gradient(180deg, #FF7365 0%, #FA4B39 100%);
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -59,10 +62,17 @@ p {
 
 
     }
+
+    &.message_review {
+        @include mixins.font_reusable("Inter", 500, 1rem);
+        color: #C9C9DC;
+        text-align: center;
+    }
 }
 
 a {
     &.option_type {
+        position: relative;
         width: 15.625rem;
         height: 2.375rem;
         padding-inline-start: 1rem;
@@ -71,7 +81,8 @@ a {
         border-radius: 0.5rem;
         border: 1px solid #747380;
         background: #393745;
-        position: relative;
+        text-decoration: none;
+        cursor: pointer;
 
         &>p {
             &.business_type {
@@ -96,12 +107,37 @@ a {
             }
         }
 
-        &::before {
-            background: linear-gradient(91.08deg, rgba(146, 235, 196, 0.5) 0%, rgba(20, 221, 137, 0.75) 100%);
-            content: none;
+        &:focus {
+            outline: 0.1rem solid white;
+        }
 
+        &:nth-child(2),
+        &:nth-child(6) {
+            &::before {
+                background: linear-gradient(91.08deg, rgba(255, 115, 101, 0.5) 0%, rgba(250, 75, 57, 0.75) 100%);
+            }
+        }
+
+        &:nth-child(3)::before {
+            background: linear-gradient(91.08deg, rgba(146, 235, 196, 0.5) 0%, rgba(20, 221, 137, 0.75) 100%);
+        }
+
+        &:nth-child(4)::before {
+            background: linear-gradient(91.08deg, rgba(180, 144, 255, 0.5) 0%, rgba(125, 61, 229, 0.75) 100%);
+        }
+
+        &:nth-child(5)::before {
+            background: linear-gradient(rgb(146, 155, 235) 0%, rgb(41, 84, 238) 100%);
+        }
+
+        &::before {
+
+            &:nth-child(3) {
+                background: linear-gradient(91.08deg, rgba(146, 235, 196, 0.5) 0%, rgba(20, 221, 137, 0.75) 100%);
+            }
+
+            content: none;
             position: absolute;
-            isolation: isolate;
             inset: -2px;
             border-radius: .5rem;
             z-index: -1;
@@ -110,6 +146,28 @@ a {
 
 
         }
+    }
+}
+
+button {
+    &.get_demo {
+        @include mixins.font_reusable("Inter", 500, 1rem);
+        @include mixins.button_reusable;
+        color: #FFF;
+        width: 15.625rem;
+        height: 3.75rem;
+        border-radius: 0.5rem;
+        background: linear-gradient(rgb(247, 111, 98) 0%, rgb(232, 72, 72) 100%);
+        box-shadow: rgba(244, 99, 67, 0.56) 0px 4px 24px;
+
+        &:hover {
+            background: linear-gradient(rgb(255, 149, 138) 0%, rgb(249, 105, 105) 100%);
+        }
+
+        &:focus-visible {
+            outline: 0.1rem solid white;
+        }
+
     }
 }
 

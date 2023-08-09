@@ -39,23 +39,32 @@ export default function Home() {
             </p>
           </div>
           {businessList.map((business_option) => (
-            <>
-              <a
-                className={`${styles.option_type} d-flex center-Oy`}
-                key={business_option}
-              >
-                <p className={styles.business_type}>{business_option}</p>
-                <Image
-                  src="/Logo_Arrow.png"
-                  alt="Arrow Icon"
-                  className={styles.arrow_icon}
-                  width={16}
-                  height={16}
-                  priority
-                />
-              </a>
-            </>
+            <a
+              href={`/${business_option}`}
+              className={`${styles.option_type} d-flex center-Oy`}
+              key={business_option}
+            >
+              <p className={styles.business_type}>{business_option}</p>
+              <Image
+                src="/Logo_Arrow.png"
+                alt="Arrow Icon"
+                className={styles.arrow_icon}
+                width={16}
+                height={16}
+                priority
+              />
+            </a>
           ))}
+          <button className={styles.get_demo}>Just Get Me A Demo</button>
+        </section>
+        <section
+          className={styles.trustpilot_review}
+          aria-label="TrustPilot Review"
+        >
+          <p className={styles.message_review}>
+            "In just 6 months HYROS allowed us to scale our ad spend by 43% for
+            Business Mastery and over 100% for Unleash The Power Within."
+          </p>
         </section>
       </main>
     </>
