@@ -51,6 +51,27 @@ h3 {
     }
 }
 
+h4 {
+    &.ad_spend_title {
+        @include mixins.font_reusable("Inter", 800, 1.25rem);
+        margin-block-end: 2.25rem;
+        color: #EDEFF8;
+        text-align: center;
+        line-height: normal;
+    }
+}
+
+h5 {
+    &.features {
+        @include mixins.font_reusable("Inter", 800, 1.25rem);
+        margin-block-end: 2rem;
+        color: #EDEFF8;
+        text-align: center;
+        line-height: normal;
+        color: #FFF;
+    }
+}
+
 p {
     &.business_type {
         @include mixins.font_reusable("Inter", 600, 1rem);
@@ -59,15 +80,31 @@ p {
         color: #C9C9DC;
         text-align: center;
         line-height: normal;
-
-
     }
 
-    &.message_review {
+    &.message_review_text,
+    &.message_review_author,
+    &.ad_spend_subtitle {
         @include mixins.font_reusable("Inter", 500, 1rem);
-        color: #C9C9DC;
         text-align: center;
     }
+
+    &.message_review_text {
+        margin-block-end: 1rem;
+        color: #C9C9DC;
+    }
+
+    &.message_review_author {
+        margin-block-end: calc(1rem - 1px);
+        color: #EDEFF8;
+    }
+
+    &.ad_spend_subtitle {
+        margin-block-end: 6.25rem;
+        color: #EDEFF8;
+    }
+
+
 }
 
 a {
@@ -149,6 +186,12 @@ a {
     }
 }
 
+span {
+    &.highlight {
+        color: #FE6D40;
+    }
+}
+
 button {
     &.get_demo {
         @include mixins.font_reusable("Inter", 500, 1rem);
@@ -175,5 +218,34 @@ img {
     &.arrow_icon {
         margin-inline-start: auto;
         margin-inline-end: 1rem;
+    }
+
+    &.green_polygon {
+        margin-inline-end: .375rem;
+    }
+}
+
+svg {
+    &.star_icon {
+        display: inline-flex;
+        transform: translateY(3%) scale(1.35);
+        margin-inline: .5rem;
+    }
+}
+
+figure {
+    &.ad_container {
+        position: relative;
+        margin-block-end: 1.55rem;
+    }
+}
+
+figcaption {
+    &.ad_value {
+        @include mixins.font_reusable("Inter", 600, 1.5rem);
+        color: #FFF;
+        text-align: center;
+        line-height: normal;
+        position: absolute;
     }
 }

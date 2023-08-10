@@ -1,6 +1,9 @@
+"use client";
 import Header from "./components/Header";
+import StarIcon from "./components/StarIcon";
 import Image from "next/image";
 import styles from "./styles/home.module.scss";
+import { useState, useEffect } from "react";
 
 const businessList = new Array();
 businessList.push("Info / Education");
@@ -9,7 +12,22 @@ businessList.push("Call Funnels");
 businessList.push("Local Agency / Lead Gen");
 businessList.push("Organic / Social Media");
 
+const adSpendCounter = new Array();
+adSpendCounter.push("3,650,500,000");
+adSpendCounter.push("3,650,500,174");
+adSpendCounter.push("3,650,500,357");
+adSpendCounter.push("3,650,502,785");
+
 export default function Home() {
+  const [adValue, setAdValue] = useState(0);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setAdValue((prevValue) => (prevValue + 1) % adSpendCounter.length);
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, [adValue]);
+
   return (
     <>
       <Header />
@@ -61,10 +79,52 @@ export default function Home() {
           className={styles.trustpilot_review}
           aria-label="TrustPilot Review"
         >
-          <p className={styles.message_review}>
+          <p className={styles.message_review_text}>
             "In just 6 months HYROS allowed us to scale our ad spend by 43% for
             Business Mastery and over 100% for Unleash The Power Within."
           </p>
+          <p className={styles.message_review_author}>
+            — TonyRobbins.com Ad Team
+          </p>
+          <p className={styles.message_review_author}>
+            Excellent 4.8 out of 5
+            <StarIcon className={styles.star_icon} />
+            Trustpilot
+          </p>
+        </section>
+        <section
+          className={`center-Oy d-flex clmn-dir`}
+          aria-label="Ad Spend Counter"
+        >
+          <h4 className={styles.ad_spend_title}>
+            3,000+ Businesses Have Used HYROS To Track Over
+          </h4>
+          <figure className={`${styles.ad_container} d-flex text-center`}>
+            <Image
+              src="/Hyros_Price_Counter.png"
+              alt="Price Counter Background"
+              width={415}
+              height={96}
+              priority
+            />
+
+            <figcaption className={`${styles.ad_value} d-flex center-Oy`}>
+              <Image
+                src="/Hyros_Green_Polygon.png"
+                alt="Green Polygon"
+                className={styles.green_polygon}
+                width={12}
+                height={10}
+                priority
+              />
+              {`$${adSpendCounter[adValue]}`}
+            </figcaption>
+          </figure>
+          <p className={styles.ad_spend_subtitle}>In Ad Spend</p>
+          <h5 className={styles.features}>
+            HYROS is <span className={styles.highlight}>the HIGHEST level</span>{" "}
+            of AD Tracking & AI Optimization for digital businesses
+          </h5>
         </section>
       </main>
     </>
