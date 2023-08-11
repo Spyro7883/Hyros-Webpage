@@ -44,7 +44,7 @@ export default function Home() {
           className={`${styles.business_list} d-flex clmn-dir`}
           aria-label="Select your business type"
         >
-          <div className="d-flex center-Oy" style={{ minWidth: "250px" }}>
+          <div className="d-flex center-Oy">
             <Image
               src="/Logo_Business.png"
               alt="Business Logo"
@@ -91,11 +91,7 @@ export default function Home() {
             <StarIcon className={styles.star_icon} />
             Trustpilot
           </p>
-        </section>
-        <section
-          className={`center-Oy d-flex clmn-dir`}
-          aria-label="Ad Spend Counter"
-        >
+
           <h4 className={styles.ad_spend_title}>
             3,000+ Businesses Have Used HYROS To Track Over
           </h4>
@@ -121,10 +117,37 @@ export default function Home() {
             </figcaption>
           </figure>
           <p className={styles.ad_spend_subtitle}>In Ad Spend</p>
+        </section>
+        <section
+          className={`center-Oy d-flex clmn-dir`}
+          aria-label="Ad Spend Counter"
+        >
           <h5 className={styles.features}>
             HYROS is <span className={styles.highlight}>the HIGHEST level</span>{" "}
             of AD Tracking & AI Optimization for digital businesses
           </h5>
+          <p className={styles.features_subtitle}>
+            Click To See Features That Apply To YOUR Business Model
+          </p>
+          <a className={styles.menu_box}>
+            <div className="text-center">
+              <p className={styles.box_title}>Info Businesses</p>
+              <div className={styles.circle} />
+            </div>
+            <p className={styles.text_box}>
+              The most important tools and features for Info
+            </p>
+            <div className={`${styles.circle_arrow} text-center`}>
+              <Image
+                src="/Logo_Arrow.png"
+                alt="Arrow Icon"
+                className={styles.arrow_icon}
+                width={16}
+                height={14.5}
+                priority
+              />
+            </div>
+          </a>
         </section>
       </main>
     </>

@@ -11,6 +11,11 @@ section {
     &.business_list {
         align-items: center;
         margin-block-start: 20rem;
+
+        &>div:first-child {
+            min-width: 12rem;
+            width: 68%;
+        }
     }
 
     &.trustpilot_review {
@@ -54,7 +59,7 @@ h3 {
 h4 {
     &.ad_spend_title {
         @include mixins.font_reusable("Inter", 800, 1.25rem);
-        margin-block-end: 2.25rem;
+        margin-block-end: 2.5rem;
         color: #EDEFF8;
         text-align: center;
         line-height: normal;
@@ -78,13 +83,14 @@ p {
         margin-inline-start: 0.75rem;
 
         color: #C9C9DC;
-        text-align: center;
+        text-align: start;
         line-height: normal;
     }
 
     &.message_review_text,
     &.message_review_author,
-    &.ad_spend_subtitle {
+    &.ad_spend_subtitle,
+    &.features_subtitle {
         @include mixins.font_reusable("Inter", 500, 1rem);
         text-align: center;
     }
@@ -104,13 +110,32 @@ p {
         color: #EDEFF8;
     }
 
+    &.features_subtitle {
+        margin-block-end: 2rem;
+        font-weight: 600;
+        color: #C9C9DC;
+    }
+
+    &.box_title {
+        @include mixins.font_reusable("Inter", 600, 1rem);
+        color: #FFF;
+    }
+
+    &.text_box {
+        @include mixins.font_reusable("Inter", 600, 1rem);
+        margin-block-end: .75rem;
+        color: #C9C9DC;
+        text-align: start;
+    }
+
 
 }
 
 a {
     &.option_type {
         position: relative;
-        width: 15.625rem;
+        min-width: 12rem;
+        width: 68%;
         height: 2.375rem;
         padding-inline-start: 1rem;
         padding-block-end: .2rem;
@@ -184,6 +209,43 @@ a {
 
         }
     }
+
+    &.menu_box {
+        width: 15.9375rem;
+        height: 9.75rem;
+        padding-inline: 1.25rem;
+        padding-block: 1rem;
+        border-radius: 1rem;
+        background: linear-gradient(262deg, #3A3845 13.92%, #2C2A36 84.19%);
+
+        &>div {
+            display: inline-flex;
+        }
+    }
+}
+
+div {
+    &.circle {
+        width: 0.75rem;
+        height: 0.75rem;
+        margin-inline-start: .5rem;
+        margin-block-end: .1rem;
+        background: linear-gradient(180deg, #FF7365 0%, #FA4B39 100%);
+        border-radius: 0.5rem;
+    }
+
+    &.circle_arrow {
+        width: 2rem;
+        height: 2rem;
+        background: linear-gradient(180deg, #2A2934 0%, #262430 100%);
+        border-radius: 1rem;
+
+        &>img {
+            &.arrow_icon {
+                margin-inline: 0;
+            }
+        }
+    }
 }
 
 span {
@@ -197,7 +259,8 @@ button {
         @include mixins.font_reusable("Inter", 500, 1rem);
         @include mixins.button_reusable;
         color: #FFF;
-        width: 15.625rem;
+        min-width: 12rem;
+        width: 68%;
         height: 3.75rem;
         border-radius: 0.5rem;
         background: linear-gradient(rgb(247, 111, 98) 0%, rgb(232, 72, 72) 100%);
@@ -236,7 +299,7 @@ svg {
 figure {
     &.ad_container {
         position: relative;
-        margin-block-end: 1.55rem;
+        margin-block-end: 1.75rem;
     }
 }
 
