@@ -18,6 +18,12 @@ adSpendCounter.push("3,650,500,174");
 adSpendCounter.push("3,650,500,357");
 adSpendCounter.push("3,650,502,785");
 
+const boxTitle = new Array();
+boxTitle.push("Info Businesses");
+boxTitle.push("Call Funnels");
+boxTitle.push("E-Commerce");
+boxTitle.push("Agency");
+
 export default function Home() {
   const [adValue, setAdValue] = useState(0);
 
@@ -104,7 +110,9 @@ export default function Home() {
               priority
             />
 
-            <figcaption className={`${styles.ad_value} d-flex center-Oy`}>
+            <figcaption
+              className={`${styles.ad_value} d-flex clmn-dir center-Oy`}
+            >
               <Image
                 src="/Hyros_Green_Polygon.png"
                 alt="Green Polygon"
@@ -113,7 +121,7 @@ export default function Home() {
                 height={10}
                 priority
               />
-              {`$${adSpendCounter[adValue]}`}
+              <p>{`$${adSpendCounter[adValue]}`}</p>
             </figcaption>
           </figure>
           <p className={styles.ad_spend_subtitle}>In Ad Spend</p>
@@ -129,25 +137,49 @@ export default function Home() {
           <p className={styles.features_subtitle}>
             Click To See Features That Apply To YOUR Business Model
           </p>
-          <a className={styles.menu_box}>
-            <div className="text-center">
-              <p className={styles.box_title}>Info Businesses</p>
-              <div className={styles.circle} />
-            </div>
-            <p className={styles.text_box}>
-              The most important tools and features for Info
+          {boxTitle.map((box_option) => (
+            <a className={styles.menu_box} key={box_option}>
+              <div className="text-center">
+                <p className={styles.box_title}>{box_option}</p>
+                <div className={styles.circle} />
+              </div>
+              <p className={styles.box_text}>
+                The most important tools and features for Info
+              </p>
+              <div className={`${styles.circle_arrow} text-center`}>
+                <Image
+                  src="/Logo_Arrow.png"
+                  alt="Arrow Icon"
+                  className={styles.arrow_icon}
+                  width={16}
+                  height={14.5}
+                  priority
+                />
+              </div>
+            </a>
+          ))}
+        </section>
+        <section
+          className={`center-Oy d-flex clmn-dir`}
+          aria-label="Testimonials"
+        >
+          <h6 className={styles.testimonials_title}>
+            Testimonials from brands you may know
+          </h6>
+          <div className={styles.testimonials_block}>
+            <Image
+              src="/Hyros_Quotes.svg"
+              alt="Quotes"
+              width={26}
+              height={24}
+              priority
+            />
+            <p className={styles.testimonials_text}>
+              In just 6 months allowed us to scale our ad spend by 43% for
+              Business Mastery and over 100% for Unleash The Power Within. And I
+              can't say how impressed.I am with HYROS's world class team.
             </p>
-            <div className={`${styles.circle_arrow} text-center`}>
-              <Image
-                src="/Logo_Arrow.png"
-                alt="Arrow Icon"
-                className={styles.arrow_icon}
-                width={16}
-                height={14.5}
-                priority
-              />
-            </div>
-          </a>
+          </div>
         </section>
       </main>
     </>

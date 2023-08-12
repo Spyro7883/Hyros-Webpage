@@ -14,7 +14,8 @@ section {
 
         &>div:first-child {
             min-width: 12rem;
-            width: 68%;
+            width: 90%;
+            max-width: 20rem;
         }
     }
 
@@ -77,6 +78,18 @@ h5 {
     }
 }
 
+h6 {
+    &.testimonials_title {
+        @include mixins.font_reusable("Inter", 800, 1.25rem);
+        color: #FFF;
+        text-align: center;
+        line-height: normal;
+        text-transform: uppercase;
+        margin-block-start: 4.375rem;
+        margin-block-end: 3.75rem;
+    }
+}
+
 p {
     &.business_type {
         @include mixins.font_reusable("Inter", 600, 1rem);
@@ -121,11 +134,17 @@ p {
         color: #FFF;
     }
 
-    &.text_box {
+    &.box_text {
         @include mixins.font_reusable("Inter", 600, 1rem);
         margin-block-end: .75rem;
         color: #C9C9DC;
         text-align: start;
+    }
+
+    &.testimonials_text {
+        @include mixins.font_reusable("Inter", 500, 1.25rem);
+        margin-block-start: calc(0.875rem - 1px);
+        color: rgb(201, 201, 220);
     }
 
 
@@ -135,7 +154,8 @@ a {
     &.option_type {
         position: relative;
         min-width: 12rem;
-        width: 68%;
+        width: 90%;
+        max-width: 20rem;
         height: 2.375rem;
         padding-inline-start: 1rem;
         padding-block-end: .2rem;
@@ -211,15 +231,91 @@ a {
     }
 
     &.menu_box {
-        width: 15.9375rem;
+        position: relative;
+        min-width: 11.4rem;
+        width: 90%;
+        max-width: 15.9375rem;
         height: 9.75rem;
         padding-inline: 1.25rem;
         padding-block: 1rem;
+        margin-block-end: 2.25rem;
         border-radius: 1rem;
         background: linear-gradient(262deg, #3A3845 13.92%, #2C2A36 84.19%);
 
         &>div {
             display: inline-flex;
+
+
+        }
+
+        &:nth-child(3) div.circle {
+            background: linear-gradient(180deg, #FF7365 0%, #FA4B39 100%);
+        }
+
+        &:nth-child(4) div.circle {
+            background: linear-gradient(180deg, #92EBC4 0%, #14DD89 100%);
+        }
+
+        &:nth-child(5) div.circle {
+            background: linear-gradient(180deg, #B490FF 0%, #7D3DE5 100%);
+        }
+
+        &:nth-child(6) div.circle {
+            background: linear-gradient(180deg, #929BEB 0%, #2954EE 100%);
+        }
+
+        &:hover {
+            background: linear-gradient(rgb(42, 41, 52) 0%, rgb(38, 36, 48) 100%);
+        }
+
+        &:focus {
+            outline: 0.1rem solid white;
+        }
+
+        &:nth-child(3) {
+            &::before {
+                background: linear-gradient(91.08deg, rgba(255, 115, 101, 0.5) 0%, rgba(250, 75, 57, 0.75) 100%);
+            }
+        }
+
+        &:nth-child(4)::before {
+            &:hover {
+                width: 100%;
+            }
+
+            background: linear-gradient(91.08deg, rgba(146, 235, 196, 0.5) 0%, rgba(20, 221, 137, 0.75) 100%);
+            height: 100%;
+            width: 0px;
+            position: absolute;
+            z-index: -1;
+            opacity: 1;
+            inset: -10px;
+        }
+
+        &:nth-child(5)::before {
+            background: linear-gradient(91.08deg, rgba(180, 144, 255, 0.5) 0%, rgba(125, 61, 229, 0.75) 100%);
+        }
+
+        &:nth-child(6)::before {
+            background: linear-gradient(rgb(146, 155, 235) 0%, rgb(41, 84, 238) 100%);
+        }
+
+        &::before {
+
+            &:nth-child(3) {
+                background: linear-gradient(91.08deg, rgba(146, 235, 196, 0.5) 0%, rgba(20, 221, 137, 0.75) 100%);
+            }
+
+            content: "";
+            // width: 0px;
+            // position: absolute;
+            // inset: -1px;
+            border-radius: .75rem;
+            // z-index: -1;
+            // opacity: 1;
+            transition: width 0.3s linear 0s;
+
+
         }
     }
 }
@@ -230,11 +326,13 @@ div {
         height: 0.75rem;
         margin-inline-start: .5rem;
         margin-block-end: .1rem;
-        background: linear-gradient(180deg, #FF7365 0%, #FA4B39 100%);
         border-radius: 0.5rem;
     }
 
     &.circle_arrow {
+        position: absolute;
+        right: .5rem;
+        bottom: .5rem;
         width: 2rem;
         height: 2rem;
         background: linear-gradient(180deg, #2A2934 0%, #262430 100%);
@@ -245,6 +343,17 @@ div {
                 margin-inline: 0;
             }
         }
+    }
+
+    &.testimonials_block {
+        min-width: 12rem;
+        width: 90%;
+        // max-width: 20rem;
+        max-width: 22.8125rem;
+        min-height: 25.625rem;
+        padding: 2.5rem 1.5rem;
+        border-radius: 0.75rem;
+        background: linear-gradient(262deg, #3A3845 13.92%, #2C2A36 84.19%);
     }
 }
 
@@ -260,7 +369,8 @@ button {
         @include mixins.button_reusable;
         color: #FFF;
         min-width: 12rem;
-        width: 68%;
+        width: 90%;
+        max-width: 20rem;
         height: 3.75rem;
         border-radius: 0.5rem;
         background: linear-gradient(rgb(247, 111, 98) 0%, rgb(232, 72, 72) 100%);
@@ -305,10 +415,26 @@ figure {
 
 figcaption {
     &.ad_value {
-        @include mixins.font_reusable("Inter", 600, 1.5rem);
+        @include mixins.font_reusable("Inter", 600, 1.2rem);
+        gap: .15rem;
         color: #FFF;
         text-align: center;
         line-height: normal;
         position: absolute;
+    }
+}
+
+@media screen and (min-width: 287px) {
+    div {
+        &.circle_arrow {
+            position: static;
+        }
+    }
+
+    figcaption {
+        &.ad_value {
+            flex-direction: row;
+            font-size: 1.5rem;
+        }
     }
 }
