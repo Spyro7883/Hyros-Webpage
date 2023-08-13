@@ -144,9 +144,21 @@ p {
     &.testimonials_text {
         @include mixins.font_reusable("Inter", 500, 1.25rem);
         margin-block-start: calc(0.875rem - 1px);
+        margin-block-end: 2rem;
         color: rgb(201, 201, 220);
     }
 
+    &.author_review_title {
+        @include mixins.font_reusable("Inter", 600, 1rem);
+        color: #FFF;
+        letter-spacing: -0.02rem;
+    }
+
+    &.author_review_text {
+        @include mixins.font_reusable("Inter", 600, 1rem);
+        color: #C9C9DC;
+        letter-spacing: -0.02rem;
+    }
 
 }
 
@@ -350,10 +362,15 @@ div {
         width: 90%;
         // max-width: 20rem;
         max-width: 22.8125rem;
-        min-height: 25.625rem;
+        min-height: 21.2rem;
         padding: 2.5rem 1.5rem;
+        margin-block-end: 1.875rem;
         border-radius: 0.75rem;
         background: linear-gradient(262deg, #3A3845 13.92%, #2C2A36 84.19%);
+
+        &>div:last-child {
+            gap: .5rem;
+        }
     }
 }
 
@@ -428,6 +445,17 @@ figcaption {
     div {
         &.circle_arrow {
             position: static;
+        }
+
+        &.testimonials_block {
+            &>div:last-child {
+                flex-direction: row;
+                gap: 0;
+            }
+        }
+
+        &.testimonials_text_wrapper {
+            margin-inline-start: 1rem;
         }
     }
 

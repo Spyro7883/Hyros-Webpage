@@ -176,9 +176,119 @@ export default function Home() {
             />
             <p className={styles.testimonials_text}>
               In just 6 months allowed us to scale our ad spend by 43% for
-              Business Mastery and over 100% for Unleash The Power Within. And I
-              can't say how impressed.I am with HYROS's world class team.
+              Business Mastery and over 100% for Unleash The Power Within.{" "}
+              <span className={styles.highlight}>
+                And I can't say how impressed.
+              </span>{" "}
+              I am with HYROS's world class team.
             </p>
+            <div className="d-flex clmn-dir">
+              <Image
+                src="/robbins.png"
+                alt="Tony Robbins"
+                width={57}
+                height={57}
+                priority
+              />
+              <div className={styles.testimonials_text_wrapper}>
+                <p className={styles.author_review_title}>
+                  TONY ROBBINS Ad Team
+                </p>
+                <p className={styles.author_review_text}>
+                  The nation's top life and business strategist.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className={styles.testimonials_block}>
+            <Image
+              src="/Hyros_Quotes.svg"
+              alt="Quotes"
+              width={26}
+              height={24}
+              priority
+            />
+            <p className={styles.testimonials_text}>
+              <span className={styles.highlight}>
+                Has made such a huge difference in the GC camp.
+              </span>{" "}
+              Has Helped us really see what’s really going on.
+            </p>
+            <div className="d-flex clmn-dir">
+              <Image
+                src="/cardone.png"
+                alt="Grant Cardone"
+                width={57}
+                height={57}
+                priority
+              />
+              <div className={styles.testimonials_text_wrapper}>
+                <p className={styles.author_review_title}>
+                  GRANT CARDONE Ad Team
+                </p>
+                <p className={styles.author_review_text}>
+                  #1 sales and marketing trainer in the world
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className={styles.testimonials_block}>
+            <Image
+              src="/Hyros_Quotes.svg"
+              alt="Quotes"
+              width={26}
+              height={24}
+              priority
+            />
+            <p className={styles.testimonials_text}>
+              Everybody who uses it in my mastermind swears by it. The ROI
+              increase from increased tracking accurancy outweights the cost.
+              It's a simple math decision.
+            </p>
+            <div className="d-flex clmn-dir">
+              <Image
+                src="/sam.png"
+                alt="Sam Ovens"
+                width={57}
+                height={57}
+                priority
+              />
+              <div className={styles.testimonials_text_wrapper}>
+                <p className={styles.author_review_title}>SAM OVENS</p>
+                <p className={styles.author_review_text}>
+                  Founder Consulting.com
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className={styles.testimonials_block}>
+            <Image
+              src="/Hyros_Quotes.svg"
+              alt="Quotes"
+              width={26}
+              height={24}
+              priority
+            />
+            <p className={styles.testimonials_text}>
+              With HYROS, I can see exactly where my sales are coming from and
+              we are already 300% more profitable within 72 hours of using the
+              software.
+            </p>
+            <div className="d-flex clmn-dir">
+              <Image
+                src="/dan.png"
+                alt="Dan Henry"
+                width={57}
+                height={57}
+                priority
+              />
+              <div className={styles.testimonials_text_wrapper}>
+                <p className={styles.author_review_title}>DAN HENRY</p>
+                <p className={styles.author_review_text}>
+                  Founder of GetClients.com and Closedeals.com
+                </p>
+              </div>
+            </div>
           </div>
         </section>
       </main>
