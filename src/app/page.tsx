@@ -1,6 +1,7 @@
 "use client";
 import Header from "./components/Header";
 import StarIcon from "./components/StarIcon";
+import ClientsIcon from "./components/ClientsIcon";
 import Image from "next/image";
 import styles from "./styles/home.module.scss";
 import { useState, useEffect } from "react";
@@ -290,6 +291,12 @@ export default function Home() {
               </div>
             </div>
           </div>
+        </section>
+        <section className={`${styles.clients}`}>
+          <p className={`${styles.clients_text} d-flex text-center`}>
+            USED BY:
+          </p>
+          <ClientsIcon />
         </section>
       </main>
     </>
