@@ -25,7 +25,8 @@ section {
 
     &.clients {
         width: 100%;
-        height: 34.6875rem;
+        // min-height: 34.6875rem;
+        min-height: 10rem;
         padding: 2.5rem 0 3.25rem 0;
         border-radius: 0.75rem;
         background: linear-gradient(262deg, #3A3845 13.92%, #2C2A36 84.19%);
@@ -172,11 +173,16 @@ p {
         letter-spacing: -0.02rem;
     }
 
-    &.clients_text {
+    &.clients_text_one {
         @include mixins.font_reusable("Inter", 800, 1.25rem);
         color: #FFF;
         line-height: 1.75rem;
-        letter-spacing: -0.025rem;
+    }
+
+    &.clients_text_two {
+        @include mixins.font_reusable("Inter", 500, 1rem);
+        color: #FFF;
+        padding-block-end: 1.75rem;
     }
 
 }
@@ -390,6 +396,16 @@ div {
         &>div:last-child {
             gap: .5rem;
         }
+    }
+
+    &.clients_logo {
+        width: 185px;
+        flex-wrap: wrap;
+    }
+
+    &.logos_container {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        justify-items: center;
     }
 }
 

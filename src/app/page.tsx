@@ -293,10 +293,16 @@ export default function Home() {
           </div>
         </section>
         <section className={`${styles.clients}`}>
-          <p className={`${styles.clients_text} d-flex text-center`}>
+          <p className={`${styles.clients_text_one} d-flex text-center`}>
             USED BY:
           </p>
-          <ClientsIcon />
+          <ClientsIcon
+            logos={`${styles.clients_logo} d-flex text-center`}
+            gridContainer={styles.logos_container}
+          />
+          <p className={`${styles.clients_text_two} d-flex text-center`}>
+            Verified Across Thousands of Businesses
+          </p>
         </section>
       </main>
     </>
