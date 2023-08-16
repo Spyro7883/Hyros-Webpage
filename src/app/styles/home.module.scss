@@ -27,13 +27,19 @@ section {
         width: 100%;
         // min-height: 34.6875rem;
         min-height: 10rem;
-        padding: 2.5rem 0 3.25rem 0;
+        padding: 2.5rem 0 5.25rem 0;
         border-radius: 0.75rem;
         background: linear-gradient(262deg, #3A3845 13.92%, #2C2A36 84.19%);
 
         &>div:nth-child(2) {
             flex-wrap: wrap
         }
+    }
+
+    &.carousell {
+        width: 100%;
+        border-radius: 0.75rem;
+        background: linear-gradient(262deg, #3A3845 13.92%, #2C2A36 84.19%);
     }
 }
 
@@ -154,7 +160,7 @@ p {
         text-align: start;
     }
 
-    &.testimonials_text {
+    &.testimonials_message {
         @include mixins.font_reusable("Inter", 500, 1.25rem);
         margin-block-start: calc(0.875rem - 1px);
         margin-block-end: 2rem;
@@ -167,7 +173,7 @@ p {
         letter-spacing: -0.02rem;
     }
 
-    &.author_review_text {
+    &.author_review_subtitle {
         @include mixins.font_reusable("Inter", 600, 1rem);
         color: #C9C9DC;
         letter-spacing: -0.02rem;
@@ -182,7 +188,19 @@ p {
     &.clients_text_two {
         @include mixins.font_reusable("Inter", 500, 1rem);
         color: #FFF;
-        padding-block-end: 1.75rem;
+        padding-block-end: 3rem;
+    }
+
+    &.twitter_review_title {
+        @include mixins.font_reusable("Inter", 600, 1rem);
+        color: #FFF;
+        letter-spacing: -0.02rem;
+    }
+
+    &.twitter_review_subtitle {
+        @include mixins.font_reusable("Inter", 600, 1rem);
+        color: #C9C9DC;
+        letter-spacing: -0.02rem;
     }
 
 }
@@ -406,6 +424,14 @@ div {
     &.logos_container {
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
         justify-items: center;
+    }
+
+    &.carousell_container {
+        width: 18.5rem;
+        height: 17.25rem;
+        padding: 1.25rem;
+        border-radius: 0.5rem;
+        background: #2C2A35;
     }
 }
 

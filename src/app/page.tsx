@@ -175,7 +175,7 @@ export default function Home() {
               height={24}
               priority
             />
-            <p className={styles.testimonials_text}>
+            <p className={styles.testimonials_message}>
               In just 6 months allowed us to scale our ad spend by 43% for
               Business Mastery and over 100% for Unleash The Power Within.{" "}
               <span className={styles.highlight}>
@@ -195,7 +195,7 @@ export default function Home() {
                 <p className={styles.author_review_title}>
                   TONY ROBBINS Ad Team
                 </p>
-                <p className={styles.author_review_text}>
+                <p className={styles.author_review_subtitle}>
                   The nation's top life and business strategist.
                 </p>
               </div>
@@ -209,7 +209,7 @@ export default function Home() {
               height={24}
               priority
             />
-            <p className={styles.testimonials_text}>
+            <p className={styles.testimonials_message}>
               <span className={styles.highlight}>
                 Has made such a huge difference in the GC camp.
               </span>{" "}
@@ -227,7 +227,7 @@ export default function Home() {
                 <p className={styles.author_review_title}>
                   GRANT CARDONE Ad Team
                 </p>
-                <p className={styles.author_review_text}>
+                <p className={styles.author_review_subtitle}>
                   #1 sales and marketing trainer in the world
                 </p>
               </div>
@@ -241,7 +241,7 @@ export default function Home() {
               height={24}
               priority
             />
-            <p className={styles.testimonials_text}>
+            <p className={styles.testimonials_message}>
               Everybody who uses it in my mastermind swears by it. The ROI
               increase from increased tracking accurancy outweights the cost.
               It's a simple math decision.
@@ -256,7 +256,7 @@ export default function Home() {
               />
               <div className={styles.testimonials_text_wrapper}>
                 <p className={styles.author_review_title}>SAM OVENS</p>
-                <p className={styles.author_review_text}>
+                <p className={styles.author_review_subtitle}>
                   Founder Consulting.com
                 </p>
               </div>
@@ -270,7 +270,7 @@ export default function Home() {
               height={24}
               priority
             />
-            <p className={styles.testimonials_text}>
+            <p className={styles.testimonials_message}>
               With HYROS, I can see exactly where my sales are coming from and
               we are already 300% more profitable within 72 hours of using the
               software.
@@ -285,14 +285,14 @@ export default function Home() {
               />
               <div className={styles.testimonials_text_wrapper}>
                 <p className={styles.author_review_title}>DAN HENRY</p>
-                <p className={styles.author_review_text}>
+                <p className={styles.author_review_subtitle}>
                   Founder of GetClients.com and Closedeals.com
                 </p>
               </div>
             </div>
           </div>
         </section>
-        <section className={`${styles.clients}`}>
+        <section className={`${styles.clients}`} aria-label="Clients List">
           <p className={`${styles.clients_text_one} d-flex text-center`}>
             USED BY:
           </p>
@@ -300,9 +300,38 @@ export default function Home() {
             logos={`${styles.clients_logo} d-flex text-center`}
             gridContainer={styles.logos_container}
           />
+        </section>
+        <section className={`${styles.carousell}`}>
           <p className={`${styles.clients_text_two} d-flex text-center`}>
             Verified Across Thousands of Businesses
           </p>
+          <div className="d-flex text-center" style={{ overflowX: "auto" }}>
+            <div className={`${styles.carousell_container} clmn-dir`}>
+              <div className="d-flex">
+                <Image
+                  src="/photo2.png"
+                  alt="Picture 2"
+                  width={48}
+                  height={48}
+                  priority
+                />
+                <div className={styles.testimonials_text_wrapper}>
+                  <p className={styles.twitter_review_title}>Douglas James</p>
+                  <p className={styles.twitter_review_subtitle}>
+                    @Douglas James
+                  </p>
+                </div>
+                <Image
+                  src="/twitter.png"
+                  alt="Twitter Logo"
+                  width={22}
+                  height={18}
+                  style={{ marginInlineStart: "auto" }}
+                  priority
+                />
+              </div>
+            </div>
+          </div>
         </section>
       </main>
     </>
