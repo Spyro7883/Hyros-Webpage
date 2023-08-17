@@ -305,8 +305,8 @@ export default function Home() {
           <p className={`${styles.clients_text_two} d-flex text-center`}>
             Verified Across Thousands of Businesses
           </p>
-          <div className="d-flex text-center" style={{ overflowX: "auto" }}>
-            <div className={`${styles.carousell_container} clmn-dir`}>
+          <div className="d-flex text-center">
+            <div className={`${styles.carousell_container} clmn-dir d-flex`}>
               <div className="d-flex">
                 <Image
                   src="/photo2.png"
@@ -324,12 +324,18 @@ export default function Home() {
                 <Image
                   src="/twitter.png"
                   alt="Twitter Logo"
+                  className={styles.twitter_logo}
                   width={22}
                   height={18}
-                  style={{ marginInlineStart: "auto" }}
                   priority
                 />
               </div>
+              <p className={styles.twitter_review_subtitle}>
+                After 90 days of using Alex Becker’s True Tracking Software,
+                Hyros, we’ve been able to scale 1 of our offers from $150,000 a
+                month to $300,000 a month WITHOUT increasing ad spend. His team
+                and...
+              </p>
             </div>
           </div>
         </section>

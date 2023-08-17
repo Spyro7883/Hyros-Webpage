@@ -40,6 +40,7 @@ section {
         width: 100%;
         border-radius: 0.75rem;
         background: linear-gradient(262deg, #3A3845 13.92%, #2C2A36 84.19%);
+
     }
 }
 
@@ -187,6 +188,7 @@ p {
 
     &.clients_text_two {
         @include mixins.font_reusable("Inter", 500, 1rem);
+        text-align: center;
         color: #FFF;
         padding-block-end: 3rem;
     }
@@ -432,6 +434,13 @@ div {
         padding: 1.25rem;
         border-radius: 0.5rem;
         background: #2C2A35;
+
+
+
+        &>div {
+            margin-block-end: 1rem;
+            gap: .5rem;
+        }
     }
 }
 
@@ -473,6 +482,10 @@ img {
 
     &.green_polygon {
         margin-inline-end: .375rem;
+    }
+
+    &.twitter_logo {
+        margin-inline-start: auto;
     }
 }
 
@@ -517,6 +530,13 @@ figcaption {
 
         &.testimonials_text_wrapper {
             margin-inline-start: 1rem;
+        }
+
+        &.carousell_container {
+            &>div {
+                flex-direction: row;
+                gap: 0;
+            }
         }
     }
 
