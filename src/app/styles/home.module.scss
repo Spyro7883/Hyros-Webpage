@@ -41,6 +41,13 @@ section {
         border-radius: 0.75rem;
         background: linear-gradient(262deg, #3A3845 13.92%, #2C2A36 84.19%);
 
+        overflow: auto;
+
+        &>div {
+            gap: 1.5rem;
+            cursor: grab;
+        }
+
     }
 }
 
@@ -201,6 +208,7 @@ p {
 
     &.twitter_review_subtitle {
         @include mixins.font_reusable("Inter", 600, 1rem);
+        margin-block-end: 1.5rem;
         color: #C9C9DC;
         letter-spacing: -0.02rem;
     }
@@ -430,7 +438,7 @@ div {
 
     &.carousell_container {
         width: 18.5rem;
-        height: 17.25rem;
+        min-height: 17.25rem;
         padding: 1.25rem;
         border-radius: 0.5rem;
         background: #2C2A35;
@@ -441,6 +449,10 @@ div {
             margin-block-end: 1rem;
             gap: .5rem;
         }
+    }
+
+    &.twitter_review_icons {
+        justify-content: space-between;
     }
 }
 

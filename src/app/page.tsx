@@ -5,25 +5,7 @@ import ClientsIcon from "./components/ClientsIcon";
 import Image from "next/image";
 import styles from "./styles/home.module.scss";
 import { useState, useEffect } from "react";
-
-const businessList = new Array();
-businessList.push("Info / Education");
-businessList.push("E-Commerce");
-businessList.push("Call Funnels");
-businessList.push("Local Agency / Lead Gen");
-businessList.push("Organic / Social Media");
-
-const adSpendCounter = new Array();
-adSpendCounter.push("3,650,500,000");
-adSpendCounter.push("3,650,500,174");
-adSpendCounter.push("3,650,500,357");
-adSpendCounter.push("3,650,502,785");
-
-const boxTitle = new Array();
-boxTitle.push("Info Businesses");
-boxTitle.push("Call Funnels");
-boxTitle.push("E-Commerce");
-boxTitle.push("Agency");
+import { businessList, adSpendCounter, boxTitle, twitterArray } from "./utils";
 
 export default function Home() {
   const [adValue, setAdValue] = useState(0);
@@ -306,37 +288,68 @@ export default function Home() {
             Verified Across Thousands of Businesses
           </p>
           <div className="d-flex text-center">
-            <div className={`${styles.carousell_container} clmn-dir d-flex`}>
-              <div className="d-flex">
-                <Image
-                  src="/photo2.png"
-                  alt="Picture 2"
-                  width={48}
-                  height={48}
-                  priority
-                />
-                <div className={styles.testimonials_text_wrapper}>
-                  <p className={styles.twitter_review_title}>Douglas James</p>
-                  <p className={styles.twitter_review_subtitle}>
-                    @Douglas James
-                  </p>
+            {twitterArray.map((tweet) => (
+              <div className={`${styles.carousell_container} clmn-dir d-flex`}>
+                <div className="d-flex">
+                  <Image
+                    src={`/${tweet.post_profile}`}
+                    alt="Picture 2"
+                    width={48}
+                    height={48}
+                    priority
+                  />
+                  <div className={styles.testimonials_text_wrapper}>
+                    <p className={styles.twitter_review_title}>
+                      {tweet.post_title}
+                    </p>
+                    <p className={styles.twitter_review_subtitle}>
+                      @{tweet.post_title}
+                    </p>
+                  </div>
+                  <Image
+                    src="/twitter.png"
+                    alt="Twitter Logo"
+                    className={styles.twitter_logo}
+                    width={22}
+                    height={18}
+                    priority
+                  />
                 </div>
-                <Image
-                  src="/twitter.png"
-                  alt="Twitter Logo"
-                  className={styles.twitter_logo}
-                  width={22}
-                  height={18}
-                  priority
-                />
+                <p className={styles.twitter_review_subtitle}>
+                  {tweet.post_text}
+                </p>
+                <div className={`${styles.twitter_review_icons} d-flex`}>
+                  <Image
+                    src="/comment.png"
+                    alt="Comment Icon"
+                    width={18}
+                    height={18}
+                    priority
+                  />
+                  <Image
+                    src="/retweet.png"
+                    alt="Retweet Icon"
+                    width={20}
+                    height={15}
+                    priority
+                  />
+                  <Image
+                    src="/like.png"
+                    alt="Like Icon"
+                    width={18}
+                    height={17}
+                    priority
+                  />
+                  <Image
+                    src="/share.png"
+                    alt="Share Icon"
+                    width={20}
+                    height={20}
+                    priority
+                  />
+                </div>
               </div>
-              <p className={styles.twitter_review_subtitle}>
-                After 90 days of using Alex Becker’s True Tracking Software,
-                Hyros, we’ve been able to scale 1 of our offers from $150,000 a
-                month to $300,000 a month WITHOUT increasing ad spend. His team
-                and...
-              </p>
-            </div>
+            ))}
           </div>
         </section>
       </main>
