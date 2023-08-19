@@ -4,11 +4,33 @@ import StarIcon from "./components/StarIcon";
 import ClientsIcon from "./components/ClientsIcon";
 import Image from "next/image";
 import styles from "./styles/home.module.scss";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { businessList, adSpendCounter, boxTitle, twitterArray } from "./utils";
 
 export default function Home() {
   const [adValue, setAdValue] = useState(0);
+
+  const carouselRef = useRef<HTMLDivElement | null>(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [offset, setOffset] = useState(0);
+
+  const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
+    setIsDragging(true);
+    setStartX(e.clientX - offset);
+  };
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!isDragging || !carouselRef.current) return;
+
+    const x = e.clientX - startX;
+    setOffset(x);
+    carouselRef.current.style.transform = `translateX(${x}px)`;
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -274,7 +296,15 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section className={`${styles.clients}`} aria-label="Clients List">
+        <section
+          className={`${styles.clients}`}
+          aria-label="Clients List"
+          ref={carouselRef}
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUp}
+          onMouseLeave={handleMouseUp}
+        >
           <p className={`${styles.clients_text_one} d-flex text-center`}>
             USED BY:
           </p>
@@ -283,13 +313,19 @@ export default function Home() {
             gridContainer={styles.logos_container}
           />
         </section>
-        <section className={`${styles.carousell}`}>
+        <section className={`${styles.carousell}`} ref={carouselRef}>
           <p className={`${styles.clients_text_two} d-flex text-center`}>
             Verified Across Thousands of Businesses
           </p>
-          <div className="d-flex text-center">
+          <div
+            className="d-flex text-center"
+            style={{ transform: `translateX(${offset}px)` }}
+          >
             {twitterArray.map((tweet) => (
-              <div className={`${styles.carousell_container} clmn-dir d-flex`}>
+              <div
+                className={`${styles.carousell_container} clmn-dir d-flex`}
+                key={tweet.post_title}
+              >
                 <div className="d-flex">
                   <Image
                     src={`/${tweet.post_profile}`}
