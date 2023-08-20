@@ -12,24 +12,34 @@ export default function Home() {
 
   const carouselRef = useRef<HTMLDivElement | null>(null);
   const [isDragging, setIsDragging] = useState(false);
-  const [startX, setStartX] = useState(0);
-  const [offset, setOffset] = useState(0);
 
-  const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
-    setIsDragging(true);
-    setStartX(e.clientX - offset);
-  };
+  useEffect(() => {
+    // Initialize the scroll position to start in the middle
+    if (carouselRef.current) {
+      const viewWidth = carouselRef.current.offsetWidth;
+      const itemWidth = viewWidth / 3;
+      carouselRef.current.scrollLeft = twitterArray.length * itemWidth;
+    }
+  }, []);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!isDragging || !carouselRef.current) return;
+    if (isDragging && carouselRef.current) {
+      const x = e.movementX;
+      carouselRef.current.scrollLeft -= x;
 
-    const x = e.clientX - startX;
-    setOffset(x);
-    carouselRef.current.style.transform = `translateX(${x}px)`;
-  };
+      const viewWidth = carouselRef.current.offsetWidth;
+      const itemWidth = viewWidth / 3;
 
-  const handleMouseUp = () => {
-    setIsDragging(false);
+      // If we're near the start or the end, reset to the middle
+      if (carouselRef.current.scrollLeft < itemWidth) {
+        carouselRef.current.scrollLeft += twitterArray.length * itemWidth;
+      } else if (
+        carouselRef.current.scrollLeft >
+        twitterArray.length * 2 * itemWidth - viewWidth
+      ) {
+        carouselRef.current.scrollLeft -= twitterArray.length * itemWidth;
+      }
+    }
   };
 
   useEffect(() => {
@@ -296,15 +306,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section
-          className={`${styles.clients}`}
-          aria-label="Clients List"
-          ref={carouselRef}
-          onMouseDown={handleMouseDown}
-          onMouseMove={handleMouseMove}
-          onMouseUp={handleMouseUp}
-          onMouseLeave={handleMouseUp}
-        >
+        <section className={`${styles.clients}`} aria-label="Clients List">
           <p className={`${styles.clients_text_one} d-flex text-center`}>
             USED BY:
           </p>
@@ -313,13 +315,20 @@ export default function Home() {
             gridContainer={styles.logos_container}
           />
         </section>
-        <section className={`${styles.carousell}`} ref={carouselRef}>
+        <section className={`${styles.carousell}`}>
           <p className={`${styles.clients_text_two} d-flex text-center`}>
             Verified Across Thousands of Businesses
           </p>
           <div
             className="d-flex text-center"
-            style={{ transform: `translateX(${offset}px)` }}
+            onMouseDown={(e) => {
+              setIsDragging(true);
+              e.preventDefault();
+            }}
+            onMouseMove={handleMouseMove}
+            onMouseUp={() => setIsDragging(false)}
+            onMouseLeave={() => setIsDragging(false)}
+            ref={carouselRef}
           >
             {twitterArray.map((tweet) => (
               <div

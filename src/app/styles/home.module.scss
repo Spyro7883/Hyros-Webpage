@@ -46,6 +46,16 @@ section {
         &>div {
             gap: 1.5rem;
             cursor: grab;
+            display: flex;
+            overflow-x: scroll;
+            cursor: grab;
+            scrollbar-width: none;
+            transition: scrollLeft 0.3s ease;
+
+            &::-webkit-scrollbar {
+                display: none;
+                /* Chrome, Safari */
+            }
         }
 
     }
@@ -442,6 +452,12 @@ div {
         padding: 1.25rem;
         border-radius: 0.5rem;
         background: #2C2A35;
+        flex: 0 0 auto;
+        width: calc(100% / 3);
+        /* Adjust this value based on how many items you want to display at once */
+        padding: 20px;
+        box-sizing: border-box;
+        user-select: none;
 
         &>div {
             margin-block-end: 1rem;
@@ -546,6 +562,7 @@ figcaption {
             &>div {
                 flex-direction: row;
                 gap: 0;
+
             }
         }
     }
