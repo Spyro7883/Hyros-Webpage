@@ -29,7 +29,7 @@ section {
         min-height: 10rem;
         padding: 2.5rem 0 5.25rem 0;
         border-radius: 0.75rem;
-        background: linear-gradient(262deg, #3A3845 13.92%, #2C2A36 84.19%);
+        background: rgb(36, 34, 44);
 
         &>div:nth-child(2) {
             flex-wrap: wrap
@@ -39,7 +39,7 @@ section {
     &.carousell {
         width: 100%;
         border-radius: 0.75rem;
-        background: linear-gradient(262deg, #3A3845 13.92%, #2C2A36 84.19%);
+        background: rgb(36, 34, 44);
 
         overflow: auto;
 
@@ -58,6 +58,11 @@ section {
             }
         }
 
+    }
+
+    &.second_business_model {
+        background: rgb(36, 34, 44);
+        padding-block-start: 3.125rem;
     }
 }
 
