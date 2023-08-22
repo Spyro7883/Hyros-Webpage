@@ -426,6 +426,30 @@ export default function Home() {
             </a>
           ))}
         </section>
+        <footer className={styles.essentials}>
+          <div className={styles.footer_container}>
+            <Image
+              src="/Logo_Hyros.png"
+              alt="Hyros Logo"
+              width={43}
+              height={43}
+              priority
+            />
+            <p className={`${styles.footer_title}`}>
+              Legendary Tracking And AI Optimization For Ads
+            </p>
+            <div className="d-flex">
+              <p style={{ color: "white" }}>Product</p>
+              <Image
+                src="/Footer_Arrow.svg"
+                alt="Arrow"
+                width={8}
+                height={6}
+                priority
+              />
+            </div>
+          </div>
+        </footer>
       </main>
     </>
   );
