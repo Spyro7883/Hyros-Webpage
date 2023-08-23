@@ -438,8 +438,8 @@ export default function Home() {
             <p className={`${styles.footer_title}`}>
               Legendary Tracking And AI Optimization For Ads
             </p>
-            <div className="d-flex">
-              <p style={{ color: "white" }}>Product</p>
+            <div className={`${styles.footer_container_row} d-flex`}>
+              <p className={styles.container_row_title}>Product</p>
               <Image
                 src="/Footer_Arrow.svg"
                 alt="Arrow"
@@ -448,6 +448,39 @@ export default function Home() {
                 priority
               />
             </div>
+            <div className={`${styles.footer_container_row} d-flex`}>
+              <p className={styles.container_row_title}>Legal</p>
+              <Image
+                src="/Footer_Arrow.svg"
+                alt="Arrow"
+                width={8}
+                height={6}
+                priority
+              />
+            </div>
+            <div className={`${styles.footer_container_row} d-flex`}>
+              <p className={styles.container_row_title}>About us</p>
+              <Image
+                src="/Footer_Arrow.svg"
+                alt="Arrow"
+                width={8}
+                height={6}
+                priority
+              />
+            </div>
+            <div className={`${styles.footer_container_row} d-flex`}>
+              <p className={styles.container_row_title}>Support</p>
+              <Image
+                src="/Footer_Arrow.svg"
+                alt="Arrow"
+                width={8}
+                height={6}
+                priority
+              />
+            </div>
+            <p className={styles.copyright}>
+              © 2022 Hyros INC. All rights reserved.
+            </p>
           </div>
         </footer>
       </main>

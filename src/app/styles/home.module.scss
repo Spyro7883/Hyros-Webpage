@@ -253,6 +253,20 @@ p {
         padding-block: 1rem 3rem;
     }
 
+    &.container_row_title {
+        @include mixins.font_reusable("Inter", 600, 0.875rem);
+        margin-inline-end: auto;
+        color: #76768D;
+        line-height: 1.375rem;
+    }
+
+    &.copyright {
+        @include mixins.font_reusable("Inter", 600, 1rem);
+        margin-block-start: 3rem;
+        color: #76768D;
+        line-height: 1.5rem;
+    }
+
 }
 
 a {
@@ -501,6 +515,11 @@ div {
 
     &.footer_container {
         margin-inline: 1rem;
+    }
+
+    &.footer_container_row {
+        min-height: 3rem;
+        align-items: center;
     }
 }
 
