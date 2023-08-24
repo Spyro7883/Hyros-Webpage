@@ -50,7 +50,7 @@ section {
             overflow-x: scroll;
             cursor: grab;
             scrollbar-width: none;
-            transition: scrollLeft 0.3s ease;
+            // transition: scrollLeft 0.3s ease;
 
             &::-webkit-scrollbar {
                 display: none;
@@ -496,12 +496,6 @@ div {
         padding: 1.25rem;
         border-radius: 0.5rem;
         background: #2C2A35;
-        flex: 0 0 auto;
-        width: calc(100% / 3);
-        /* Adjust this value based on how many items you want to display at once */
-        padding: 20px;
-        box-sizing: border-box;
-        user-select: none;
 
         &>div {
             margin-block-end: 1rem;
@@ -591,6 +585,24 @@ figcaption {
         text-align: center;
         line-height: normal;
         position: absolute;
+    }
+}
+
+.slick-slider {
+    position: relative;
+
+    .slick-list {
+        overflow: hidden; // Ensures items outside of the view are hidden
+        margin: 0 1rem; // Margin to give some horizontal space
+
+        .slick-track {
+            display: flex;
+            align-items: center; // Align items vertically center
+
+            div {
+                padding: 0 0.5rem; // Horizontal padding for each slide/item
+            }
+        }
     }
 }
 

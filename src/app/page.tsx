@@ -2,6 +2,9 @@
 import Header from "./components/Header";
 import StarIcon from "./components/StarIcon";
 import ClientsIcon from "./components/ClientsIcon";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.scss";
+import "slick-carousel/slick/slick-theme.scss";
 import Image from "next/image";
 import styles from "./styles/home.module.scss";
 import { useState, useEffect, useRef } from "react";
@@ -10,36 +13,14 @@ import { businessList, adSpendCounter, boxTitle, twitterArray } from "./utils";
 export default function Home() {
   const [adValue, setAdValue] = useState(0);
 
-  const carouselRef = useRef<HTMLDivElement | null>(null);
-  const [isDragging, setIsDragging] = useState(false);
-
-  useEffect(() => {
-    // Initialize the scroll position to start in the middle
-    if (carouselRef.current) {
-      const viewWidth = carouselRef.current.offsetWidth;
-      const itemWidth = viewWidth / 3;
-      carouselRef.current.scrollLeft = twitterArray.length * itemWidth;
-    }
-  }, []);
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (isDragging && carouselRef.current) {
-      const x = e.movementX;
-      carouselRef.current.scrollLeft -= x;
-
-      const viewWidth = carouselRef.current.offsetWidth;
-      const itemWidth = viewWidth / 3;
-
-      // If we're near the start or the end, reset to the middle
-      if (carouselRef.current.scrollLeft < itemWidth) {
-        carouselRef.current.scrollLeft += twitterArray.length * itemWidth;
-      } else if (
-        carouselRef.current.scrollLeft >
-        twitterArray.length * 2 * itemWidth - viewWidth
-      ) {
-        carouselRef.current.scrollLeft -= twitterArray.length * itemWidth;
-      }
-    }
+  const settings = {
+    infinite: true,
+    speed: 300,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    draggable: true,
+    swipeToSlide: true,
+    cssEase: "ease",
   };
 
   useEffect(() => {
@@ -319,17 +300,8 @@ export default function Home() {
           <p className={`${styles.clients_text_two} d-flex text-center`}>
             Verified Across Thousands of Businesses
           </p>
-          <div
-            className="d-flex text-center"
-            onMouseDown={(e) => {
-              setIsDragging(true);
-              e.preventDefault();
-            }}
-            onMouseMove={handleMouseMove}
-            onMouseUp={() => setIsDragging(false)}
-            onMouseLeave={() => setIsDragging(false)}
-            ref={carouselRef}
-          >
+          {/* <div className="d-flex text-center"> */}
+          <Slider {...settings}>
             {twitterArray.map((tweet) => (
               <div
                 className={`${styles.carousell_container} clmn-dir d-flex`}
@@ -395,7 +367,8 @@ export default function Home() {
                 </div>
               </div>
             ))}
-          </div>
+          </Slider>
+          {/* </div> */}
         </section>
         <section
           className={`${styles.second_business_model} center-Oy d-flex clmn-dir`}
