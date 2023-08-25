@@ -87,7 +87,8 @@ section {
 h1 {
     &.title_ads {
         @include mixins.font_reusable("Inter", 700, 3rem);
-        margin-block-start: .5rem;
+        // height: 6.0625rem;
+        margin-block-start: 6.5625rem;
         text-align: center;
         line-height: normal;
         color: #EDEFF8;
