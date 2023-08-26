@@ -301,7 +301,7 @@ export default function Home() {
             Verified Across Thousands of Businesses
           </p>
           {/* <div className="d-flex text-center"> */}
-          <Slider {...settings}>
+          <Slider {...settings} className={styles["slide-track"]}>
             {twitterArray.map((tweet) => (
               <div
                 className={`${styles.carousell_container} clmn-dir d-flex`}

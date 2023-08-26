@@ -45,9 +45,8 @@ section {
 
         &>div {
             gap: 1.5rem;
-            cursor: grab;
-            display: flex;
             overflow-x: scroll;
+            display: flex;
             cursor: grab;
             scrollbar-width: none;
             // transition: scrollLeft 0.3s ease;
@@ -592,20 +591,18 @@ figcaption {
 .slick-slider {
     position: relative;
 
+
     .slick-list {
         overflow: hidden; // Ensures items outside of the view are hidden
         margin: 0 1rem; // Margin to give some horizontal space
 
-        .slick-track {
-            display: flex;
-            align-items: center; // Align items vertically center
 
-            div {
-                padding: 0 0.5rem; // Horizontal padding for each slide/item
-            }
-        }
+
+
     }
 }
+
+
 
 footer {
     &.essentials {
