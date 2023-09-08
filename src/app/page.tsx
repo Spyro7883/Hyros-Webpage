@@ -13,14 +13,34 @@ import { businessList, adSpendCounter, boxTitle, twitterArray } from "./utils";
 export default function Home() {
   const [adValue, setAdValue] = useState(0);
 
-  const settings = {
+  const sliderSettings = {
     infinite: true,
     speed: 300,
-    slidesToShow: 2,
     slidesToScroll: 1,
+    slidesToShow: 4,
     draggable: true,
     swipeToSlide: true,
     cssEase: "ease",
+    responsive: [
+      {
+        breakpoint: 1920,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
   };
 
   useEffect(() => {
@@ -301,10 +321,10 @@ export default function Home() {
             Verified Across Thousands of Businesses
           </p>
           {/* <div className="d-flex text-center"> */}
-          <Slider {...settings} className={styles["slide-track"]}>
+          <Slider {...sliderSettings}>
             {twitterArray.map((tweet) => (
               <div
-                className={`${styles.carousell_container} clmn-dir d-flex`}
+                className={`${styles.carousell_container} clmn-dir`}
                 key={tweet.post_title}
               >
                 <div className="d-flex">

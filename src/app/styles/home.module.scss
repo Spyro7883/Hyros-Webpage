@@ -55,6 +55,22 @@ section {
                 display: none;
                 /* Chrome, Safari */
             }
+
+            &>div:nth-child(2) {
+                &>div {
+                    display: inline-flex;
+                    gap: .5rem;
+                    height: 100%;
+
+                    &>div {
+                        height: inherit;
+
+                        &>div {
+                            height: inherit;
+                        }
+                    }
+                }
+            }
         }
 
     }
@@ -241,7 +257,6 @@ p {
 
     &.twitter_review_subtitle {
         @include mixins.font_reusable("Inter", 600, 1rem);
-        margin-block-end: 1.5rem;
         color: #C9C9DC;
         letter-spacing: -0.02rem;
     }
@@ -493,9 +508,15 @@ div {
     &.carousell_container {
         width: 18.5rem;
         min-height: 17.25rem;
+        height: 100%;
         padding: 1.25rem;
         border-radius: 0.5rem;
         background: #2C2A35;
+        display: flex !important;
+
+        &>p.twitter_review_subtitle:nth-child(2) {
+            margin-block-end: 1.5rem;
+        }
 
         &>div {
             margin-block-end: 1rem;
@@ -505,6 +526,7 @@ div {
 
     &.twitter_review_icons {
         justify-content: space-between;
+        margin-block-start: auto;
     }
 
     &.footer_container {
@@ -587,22 +609,6 @@ figcaption {
         position: absolute;
     }
 }
-
-.slick-slider {
-    position: relative;
-
-
-    .slick-list {
-        overflow: hidden; // Ensures items outside of the view are hidden
-        margin: 0 1rem; // Margin to give some horizontal space
-
-
-
-
-    }
-}
-
-
 
 footer {
     &.essentials {
