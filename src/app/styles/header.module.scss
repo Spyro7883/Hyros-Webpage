@@ -43,3 +43,21 @@ img {
         margin-inline-start: 2.2rem;
     }
 }
+
+nav {
+    &.navigation_bar {
+        &>ul {
+            list-style-type: none;
+        }
+
+        color: white;
+    }
+}
+
+@media screen and (min-width:680px) {
+    header {
+        &.header_page {
+            justify-content: flex-start;
+        }
+    }
+}

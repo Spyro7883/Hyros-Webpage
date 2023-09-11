@@ -2,12 +2,17 @@
 
 main {
     &.page_layout {
-        // grid-template-columns: 1fr 3fr 1fr;
         justify-content: center;
     }
 }
 
 section {
+    &.title {
+        margin-block-start: 6.5625rem;
+        text-align: center;
+        line-height: normal;
+    }
+
     &.business_list {
         align-items: center;
         margin-block-start: 20rem;
@@ -20,6 +25,8 @@ section {
     }
 
     &.trustpilot_review {
+        @include mixins.font_reusable("Inter", 500, 1rem);
+        text-align: center;
         margin-block-start: 2.25rem;
     }
 
@@ -30,6 +37,9 @@ section {
         padding: 2.5rem 0 5.25rem 0;
         border-radius: 0.75rem;
         background: rgb(36, 34, 44);
+        @include mixins.font_reusable("Inter", 800, 1.25rem);
+        color: #FFF;
+        line-height: 1.75rem;
 
         &>div:nth-child(2) {
             flex-wrap: wrap
@@ -49,11 +59,10 @@ section {
             display: flex;
             cursor: grab;
             scrollbar-width: none;
-            // transition: scrollLeft 0.3s ease;
+            transition: scrollLeft 0.3s ease;
 
             &::-webkit-scrollbar {
                 display: none;
-                /* Chrome, Safari */
             }
 
             &>div:nth-child(2) {
@@ -99,41 +108,9 @@ section {
     }
 }
 
-h1 {
-    &.title_ads {
-        @include mixins.font_reusable("Inter", 700, 3rem);
-        // height: 6.0625rem;
-        margin-block-start: 6.5625rem;
-        text-align: center;
-        line-height: normal;
-        color: #EDEFF8;
-    }
-}
+
 
 h2 {
-    &.subtitle_ai {
-        @include mixins.font_reusable("Inter", 700, 3rem);
-        justify-content: center;
-        text-align: center;
-        line-height: normal;
-        background: linear-gradient(180deg, #FF7365 0%, #FA4B39 100%);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-}
-
-h3 {
-    &.ad_roi {
-        @include mixins.font_reusable("Inter", 600, 1rem);
-        margin-block-start: 1.5rem;
-        color: #C5C5D8;
-        text-align: center;
-        line-height: normal;
-    }
-}
-
-h4 {
     &.ad_spend_title {
         @include mixins.font_reusable("Inter", 800, 1.25rem);
         margin-block-end: 2.5rem;
@@ -143,18 +120,7 @@ h4 {
     }
 }
 
-h5 {
-    &.features {
-        @include mixins.font_reusable("Inter", 800, 1.25rem);
-        margin-block-end: 2rem;
-        color: #EDEFF8;
-        text-align: center;
-        line-height: normal;
-        color: #FFF;
-    }
-}
-
-h6 {
+h4 {
     &.testimonials_title {
         @include mixins.font_reusable("Inter", 800, 1.25rem);
         color: #FFF;
@@ -166,7 +132,37 @@ h6 {
     }
 }
 
+h6 {
+    &.clients_text_two {
+        @include mixins.font_reusable("Inter", 500, 1rem);
+        text-align: center;
+        color: #FFF;
+        padding-block-end: 3rem;
+    }
+}
+
 p {
+    &.title_ads {
+        @include mixins.font_reusable("Inter", 700, 3rem);
+        color: #EDEFF8;
+    }
+
+    &.subtitle_ai {
+        @include mixins.font_reusable("Inter", 700, 3rem);
+        justify-content: center;
+        background: linear-gradient(180deg, #FF7365 0%, #FA4B39 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+
+    &.ad_roi {
+        @include mixins.font_reusable("Inter", 600, 1rem);
+        margin-block-start: 1.5rem;
+        color: #C5C5D8;
+    }
+
     &.business_type {
         @include mixins.font_reusable("Inter", 600, 1rem);
         margin-inline-start: 0.75rem;
@@ -176,12 +172,13 @@ p {
         line-height: normal;
     }
 
-    &.message_review_text,
-    &.message_review_author,
-    &.ad_spend_subtitle,
-    &.features_subtitle {
-        @include mixins.font_reusable("Inter", 500, 1rem);
+    &.features {
+        @include mixins.font_reusable("Inter", 800, 1.25rem);
+        margin-block-end: 2rem;
+        color: #EDEFF8;
         text-align: center;
+        line-height: normal;
+        color: #FFF;
     }
 
     &.message_review_text {
@@ -200,18 +197,15 @@ p {
     }
 
     &.features_subtitle {
-        margin-block-end: 2rem;
         font-weight: 600;
         color: #C9C9DC;
     }
 
     &.box_title {
-        @include mixins.font_reusable("Inter", 600, 1rem);
         color: #FFF;
     }
 
     &.box_text {
-        @include mixins.font_reusable("Inter", 600, 1rem);
         margin-block-end: .75rem;
         color: #C9C9DC;
         text-align: start;
@@ -225,28 +219,13 @@ p {
     }
 
     &.author_review_title {
-        @include mixins.font_reusable("Inter", 600, 1rem);
         color: #FFF;
         letter-spacing: -0.02rem;
     }
 
     &.author_review_subtitle {
-        @include mixins.font_reusable("Inter", 600, 1rem);
         color: #C9C9DC;
         letter-spacing: -0.02rem;
-    }
-
-    &.clients_text_one {
-        @include mixins.font_reusable("Inter", 800, 1.25rem);
-        color: #FFF;
-        line-height: 1.75rem;
-    }
-
-    &.clients_text_two {
-        @include mixins.font_reusable("Inter", 500, 1rem);
-        text-align: center;
-        color: #FFF;
-        padding-block-end: 3rem;
     }
 
     &.twitter_review_title {
@@ -365,6 +344,7 @@ a {
     }
 
     &.menu_box {
+        @include mixins.font_reusable("Inter", 600, 1rem);
         position: relative;
         min-width: 11.4rem;
         width: 90%;
@@ -375,6 +355,10 @@ a {
         margin-block-end: 2.25rem;
         border-radius: 1rem;
         background: linear-gradient(262deg, #3A3845 13.92%, #2C2A36 84.19%);
+
+        &:nth-child(2) {
+            margin-block-start: 2rem;
+        }
 
         &>div {
             display: inline-flex;
@@ -554,7 +538,6 @@ button {
         width: 90%;
         max-width: 20rem;
         height: 3.75rem;
-        border-radius: 0.5rem;
         background: linear-gradient(rgb(247, 111, 98) 0%, rgb(232, 72, 72) 100%);
         box-shadow: rgba(244, 99, 67, 0.56) 0px 4px 24px;
 
@@ -632,6 +615,7 @@ footer {
         }
 
         &.testimonials_text_wrapper {
+            @include mixins.font_reusable("Inter", 600, 1rem);
             margin-inline-start: 1rem;
         }
 

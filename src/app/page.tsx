@@ -54,13 +54,15 @@ export default function Home() {
     <>
       <Header />
       <main className={`${styles.page_layout} d-flex clmn-dir`}>
-        <section className="d-flex clmn-dir" aria-label="Title section">
-          <h1 className={`${styles.title_ads}`}>Track Ads.</h1>
-          <h2 className={`${styles.subtitle_ai}`}>Feed AI.</h2>
-          <h3 className={`${styles.ad_roi}`}>
-            HYROS AI Print Tracking is proven to increase AD ROI in over 3,000
-            businesses
-          </h3>
+        <section className={styles.title} aria-label="Title section">
+          <h1>
+            <p className={`${styles.title_ads}`}>Track Ads.</p>
+            <p className={`${styles.subtitle_ai}`}>Feed AI.</p>
+            <p className={`${styles.ad_roi}`}>
+              HYROS AI Print Tracking is proven to increase AD ROI in over 3,000
+              businesses
+            </p>
+          </h1>
         </section>
         <section
           className={`${styles.business_list} d-flex clmn-dir`}
@@ -114,9 +116,9 @@ export default function Home() {
             Trustpilot
           </p>
 
-          <h4 className={styles.ad_spend_title}>
+          <h2 className={styles.ad_spend_title}>
             3,000+ Businesses Have Used HYROS To Track Over
-          </h4>
+          </h2>
           <figure className={`${styles.ad_container} d-flex text-center`}>
             <Image
               src="/Hyros_Price_Counter.png"
@@ -146,13 +148,16 @@ export default function Home() {
           className={`center-Oy d-flex clmn-dir`}
           aria-label="Ad Spend Counter"
         >
-          <h5 className={styles.features}>
-            HYROS is <span className={styles.highlight}>the HIGHEST level</span>{" "}
-            of AD Tracking & AI Optimization for digital businesses
-          </h5>
-          <p className={styles.features_subtitle}>
-            Click To See Features That Apply To YOUR Business Model
-          </p>
+          <h3>
+            <p className={styles.features}>
+              HYROS is{" "}
+              <span className={styles.highlight}>the HIGHEST level</span> of AD
+              Tracking & AI Optimization for digital businesses
+            </p>
+            <p className={styles.features_subtitle}>
+              Click To See Features That Apply To YOUR Business Model
+            </p>
+          </h3>
           {boxTitle.map((box_option) => (
             <a className={styles.menu_box} key={box_option}>
               <div className="text-center">
@@ -179,9 +184,9 @@ export default function Home() {
           className={`center-Oy d-flex clmn-dir`}
           aria-label="Testimonials"
         >
-          <h6 className={styles.testimonials_title}>
+          <h4 className={styles.testimonials_title}>
             Testimonials from brands you may know
-          </h6>
+          </h4>
           <div className={styles.testimonials_block}>
             <Image
               src="/Hyros_Quotes.svg"
@@ -308,19 +313,16 @@ export default function Home() {
           </div>
         </section>
         <section className={`${styles.clients}`} aria-label="Clients List">
-          <p className={`${styles.clients_text_one} d-flex text-center`}>
-            USED BY:
-          </p>
+          <h5 className={`d-flex text-center`}>USED BY:</h5>
           <ClientsIcon
             logos={`${styles.clients_logo} d-flex text-center`}
             gridContainer={styles.logos_container}
           />
         </section>
-        <section className={`${styles.carousell}`}>
-          <p className={`${styles.clients_text_two} d-flex text-center`}>
+        <section className={`${styles.carousell}`} aria-label="Carousel">
+          <h6 className={`${styles.clients_text_two} d-flex text-center`}>
             Verified Across Thousands of Businesses
-          </p>
-          {/* <div className="d-flex text-center"> */}
+          </h6>
           <Slider {...sliderSettings}>
             {twitterArray.map((tweet) => (
               <div
@@ -388,11 +390,10 @@ export default function Home() {
               </div>
             ))}
           </Slider>
-          {/* </div> */}
         </section>
         <section
           className={`${styles.second_business_model} center-Oy d-flex clmn-dir`}
-          aria-label="Ad Spend Counter"
+          aria-label="Business Lists"
         >
           <p className={styles.features_subtitle}>
             Click To See Features That Apply To YOUR Business Model
@@ -419,64 +420,64 @@ export default function Home() {
             </a>
           ))}
         </section>
-        <footer className={styles.essentials}>
-          <div className={styles.footer_container}>
+      </main>
+      <footer className={styles.essentials}>
+        <div className={styles.footer_container}>
+          <Image
+            src="/Logo_Hyros.png"
+            alt="Hyros Logo"
+            width={43}
+            height={43}
+            priority
+          />
+          <p className={`${styles.footer_title}`}>
+            Legendary Tracking And AI Optimization For Ads
+          </p>
+          <div className={`${styles.footer_container_row} d-flex`}>
+            <p className={styles.container_row_title}>Product</p>
             <Image
-              src="/Logo_Hyros.png"
-              alt="Hyros Logo"
-              width={43}
-              height={43}
+              src="/Footer_Arrow.svg"
+              alt="Arrow"
+              width={8}
+              height={6}
               priority
             />
-            <p className={`${styles.footer_title}`}>
-              Legendary Tracking And AI Optimization For Ads
-            </p>
-            <div className={`${styles.footer_container_row} d-flex`}>
-              <p className={styles.container_row_title}>Product</p>
-              <Image
-                src="/Footer_Arrow.svg"
-                alt="Arrow"
-                width={8}
-                height={6}
-                priority
-              />
-            </div>
-            <div className={`${styles.footer_container_row} d-flex`}>
-              <p className={styles.container_row_title}>Legal</p>
-              <Image
-                src="/Footer_Arrow.svg"
-                alt="Arrow"
-                width={8}
-                height={6}
-                priority
-              />
-            </div>
-            <div className={`${styles.footer_container_row} d-flex`}>
-              <p className={styles.container_row_title}>About us</p>
-              <Image
-                src="/Footer_Arrow.svg"
-                alt="Arrow"
-                width={8}
-                height={6}
-                priority
-              />
-            </div>
-            <div className={`${styles.footer_container_row} d-flex`}>
-              <p className={styles.container_row_title}>Support</p>
-              <Image
-                src="/Footer_Arrow.svg"
-                alt="Arrow"
-                width={8}
-                height={6}
-                priority
-              />
-            </div>
-            <p className={styles.copyright}>
-              © 2022 Hyros INC. All rights reserved.
-            </p>
           </div>
-        </footer>
-      </main>
+          <div className={`${styles.footer_container_row} d-flex`}>
+            <p className={styles.container_row_title}>Legal</p>
+            <Image
+              src="/Footer_Arrow.svg"
+              alt="Arrow"
+              width={8}
+              height={6}
+              priority
+            />
+          </div>
+          <div className={`${styles.footer_container_row} d-flex`}>
+            <p className={styles.container_row_title}>About us</p>
+            <Image
+              src="/Footer_Arrow.svg"
+              alt="Arrow"
+              width={8}
+              height={6}
+              priority
+            />
+          </div>
+          <div className={`${styles.footer_container_row} d-flex`}>
+            <p className={styles.container_row_title}>Support</p>
+            <Image
+              src="/Footer_Arrow.svg"
+              alt="Arrow"
+              width={8}
+              height={6}
+              priority
+            />
+          </div>
+          <p className={styles.copyright}>
+            © 2022 Hyros INC. All rights reserved.
+          </p>
+        </div>
+      </footer>
     </>
   );
 }
