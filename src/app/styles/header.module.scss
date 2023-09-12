@@ -1,3 +1,5 @@
+@use "./_mixins.scss" as mixins;
+
 header {
     &.header_page {
         position: fixed;
@@ -40,17 +42,60 @@ div {
 
 img {
     &.logo {
-        margin-inline-start: 2.2rem;
+        margin-inline-start: 1rem;
     }
 }
 
 nav {
-    &.navigation_bar {
+    &.nav_bar {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: nowrap;
+
         &>ul {
             list-style-type: none;
+            padding: 0;
+
+            &:first-child {
+                margin-inline-end: auto;
+            }
+
+            &:first-child>li {
+                &.nav_link:first-child {
+                    padding: .625rem 1.625rem .625rem .75rem;
+                    position: relative;
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        width: 6px;
+                        height: 10px;
+                        right: 14px;
+                        transform: rotate(90deg);
+                        top: 14px;
+                        background: url("../../../public/Features_Arrow.svg") no-repeat;
+                    }
+                }
+            }
         }
 
         color: white;
+    }
+}
+
+li {
+    &.nav_link {
+        @include mixins.font_reusable("Inter", 500, .875rem);
+        color: rgb(201, 201, 220);
+        padding: .625rem .75rem;
+    }
+}
+
+a {
+    &.action {
+        border-radius: 4px;
+        border: 1px solid rgb(238, 120, 108);
     }
 }
 

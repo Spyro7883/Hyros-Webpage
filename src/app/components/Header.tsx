@@ -18,19 +18,35 @@ export default function Header() {
           src="/Logo_Hyros.png"
           alt="Hyros Logo"
           className={styles.logo}
-          width={50}
-          height={50}
+          width={29}
+          height={29}
           priority
         />
-        {usersWidth >= 680 ? <nav className={styles.navigation_bar}><ul><li>Features</li></ul></nav> :
+        {usersWidth >= 680 ? (
+          <nav className={`${styles.nav_bar} d-flex`}>
+            <ul className="d-flex">
+              <li className={styles.nav_link}><a>Features</a></li>
+              <li className={styles.nav_link}><a>Pricing</a></li>
+              <li className={styles.nav_link}><a>Company</a></li>
+              <li className={styles.nav_link}><a>Documentation</a></li>
+              <li className={styles.nav_link}><a>FAQ</a></li>
+              <li className={styles.nav_link}><a>Support</a></li>
+            </ul>
+            {usersWidth >= 714 ?
+              <ul className="d-flex">
+                <li className={styles.nav_link}><a>Log in</a></li>
+                <li className={styles.nav_link}><a className={styles.action}>Apply</a></li>
+              </ul> : <></>}
+          </nav>
+        ) : (
           <div className={styles.trigger} onClick={handlePopup}>
             <span className={`${styles.toggle_menu} d-flex`} />
             <span className={`${styles.toggle_menu} d-flex`} />
             <span className={`${styles.toggle_menu} d-flex`} />
           </div>
-        }
+        )}
         {popup ? <div className={styles.popup} /> : ""}
-      </header >
+      </header>
     </>
   );
 }
