@@ -7,28 +7,6 @@ main {
 }
 
 section {
-    &.title {
-        margin-block-start: 6.5625rem;
-        text-align: center;
-        line-height: normal;
-    }
-
-    &.business_list {
-        align-items: center;
-        margin-block-start: 20rem;
-
-        &>div:first-child {
-            min-width: 12rem;
-            width: 90%;
-            max-width: 20rem;
-        }
-    }
-
-    &.trustpilot_review {
-        @include mixins.font_reusable("Inter", 500, 1rem);
-        text-align: center;
-        margin-block-start: 2.25rem;
-    }
 
     &.clients {
         width: 100%;
@@ -108,30 +86,6 @@ section {
     }
 }
 
-
-
-h2 {
-    &.ad_spend_title {
-        @include mixins.font_reusable("Inter", 800, 1.25rem);
-        margin-block-end: 2.5rem;
-        color: #EDEFF8;
-        text-align: center;
-        line-height: normal;
-    }
-}
-
-h4 {
-    &.testimonials_title {
-        @include mixins.font_reusable("Inter", 800, 1.25rem);
-        color: #FFF;
-        text-align: center;
-        line-height: normal;
-        text-transform: uppercase;
-        margin-block-start: 4.375rem;
-        margin-block-end: 3.75rem;
-    }
-}
-
 h6 {
     &.clients_text_two {
         @include mixins.font_reusable("Inter", 500, 1rem);
@@ -142,92 +96,6 @@ h6 {
 }
 
 p {
-    &.title_ads {
-        @include mixins.font_reusable("Inter", 700, 3rem);
-        color: #EDEFF8;
-    }
-
-    &.subtitle_ai {
-        @include mixins.font_reusable("Inter", 700, 3rem);
-        justify-content: center;
-        background: linear-gradient(180deg, #FF7365 0%, #FA4B39 100%);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-
-
-    &.ad_roi {
-        @include mixins.font_reusable("Inter", 600, 1rem);
-        margin-block-start: 1.5rem;
-        color: #C5C5D8;
-    }
-
-    &.business_type {
-        @include mixins.font_reusable("Inter", 600, 1rem);
-        margin-inline-start: 0.75rem;
-
-        color: #C9C9DC;
-        text-align: start;
-        line-height: normal;
-    }
-
-    &.features {
-        @include mixins.font_reusable("Inter", 800, 1.25rem);
-        margin-block-end: 2rem;
-        color: #EDEFF8;
-        text-align: center;
-        line-height: normal;
-        color: #FFF;
-    }
-
-    &.message_review_text {
-        margin-block-end: 1rem;
-        color: #C9C9DC;
-    }
-
-    &.message_review_author {
-        margin-block-end: calc(1rem - 1px);
-        color: #EDEFF8;
-    }
-
-    &.ad_spend_subtitle {
-        margin-block-end: 6.25rem;
-        color: #EDEFF8;
-    }
-
-    &.features_subtitle {
-        font-weight: 600;
-        color: #C9C9DC;
-    }
-
-    &.box_title {
-        color: #FFF;
-    }
-
-    &.box_text {
-        margin-block-end: .75rem;
-        color: #C9C9DC;
-        text-align: start;
-    }
-
-    &.testimonials_message {
-        @include mixins.font_reusable("Inter", 500, 1.25rem);
-        margin-block-start: calc(0.875rem - 1px);
-        margin-block-end: 2rem;
-        color: rgb(201, 201, 220);
-    }
-
-    &.author_review_title {
-        color: #FFF;
-        letter-spacing: -0.02rem;
-    }
-
-    &.author_review_subtitle {
-        color: #C9C9DC;
-        letter-spacing: -0.02rem;
-    }
-
     &.twitter_review_title {
         @include mixins.font_reusable("Inter", 600, 1rem);
         color: #FFF;
@@ -263,222 +131,7 @@ p {
 
 }
 
-a {
-    &.option_type {
-        position: relative;
-        min-width: 12rem;
-        width: 90%;
-        max-width: 20rem;
-        height: 2.375rem;
-        padding-inline-start: 1rem;
-        padding-block-end: .2rem;
-        text-align: start;
-        border-radius: 0.5rem;
-        border: 1px solid #747380;
-        background: #393745;
-        text-decoration: none;
-        cursor: pointer;
-
-        &>p {
-            &.business_type {
-                margin-inline-start: 0;
-            }
-        }
-
-        &:nth-child(2) {
-            margin-block-start: 2rem;
-        }
-
-        &:nth-child(n):not(:first-child) {
-            margin-block-end: 1rem;
-        }
-
-        &:hover {
-            background: linear-gradient(rgb(42, 41, 52) 0%, rgb(38, 36, 48) 100%);
-            border: 1px solid transparent;
-
-            &::before {
-                content: "";
-            }
-        }
-
-        &:focus {
-            outline: 0.1rem solid white;
-        }
-
-        &:nth-child(2),
-        &:nth-child(6) {
-            &::before {
-                background: linear-gradient(91.08deg, rgba(255, 115, 101, 0.5) 0%, rgba(250, 75, 57, 0.75) 100%);
-            }
-        }
-
-        &:nth-child(3)::before {
-            background: linear-gradient(91.08deg, rgba(146, 235, 196, 0.5) 0%, rgba(20, 221, 137, 0.75) 100%);
-        }
-
-        &:nth-child(4)::before {
-            background: linear-gradient(91.08deg, rgba(180, 144, 255, 0.5) 0%, rgba(125, 61, 229, 0.75) 100%);
-        }
-
-        &:nth-child(5)::before {
-            background: linear-gradient(rgb(146, 155, 235) 0%, rgb(41, 84, 238) 100%);
-        }
-
-        &::before {
-
-            &:nth-child(3) {
-                background: linear-gradient(91.08deg, rgba(146, 235, 196, 0.5) 0%, rgba(20, 221, 137, 0.75) 100%);
-            }
-
-            content: none;
-            position: absolute;
-            inset: -2px;
-            border-radius: .5rem;
-            z-index: -1;
-            opacity: 1;
-            transition: width 0.3s linear 0s;
-
-
-        }
-    }
-
-    &.menu_box {
-        @include mixins.font_reusable("Inter", 600, 1rem);
-        position: relative;
-        min-width: 11.4rem;
-        width: 90%;
-        max-width: 15.9375rem;
-        height: 9.75rem;
-        padding-inline: 1.25rem;
-        padding-block: 1rem;
-        margin-block-end: 2.25rem;
-        border-radius: 1rem;
-        background: linear-gradient(262deg, #3A3845 13.92%, #2C2A36 84.19%);
-
-        &:nth-child(2) {
-            margin-block-start: 2rem;
-        }
-
-        &>div {
-            display: inline-flex;
-
-
-        }
-
-        &:nth-child(3) div.circle {
-            background: linear-gradient(180deg, #FF7365 0%, #FA4B39 100%);
-        }
-
-        &:nth-child(4) div.circle {
-            background: linear-gradient(180deg, #92EBC4 0%, #14DD89 100%);
-        }
-
-        &:nth-child(5) div.circle {
-            background: linear-gradient(180deg, #B490FF 0%, #7D3DE5 100%);
-        }
-
-        &:nth-child(6) div.circle {
-            background: linear-gradient(180deg, #929BEB 0%, #2954EE 100%);
-        }
-
-        &:hover {
-            background: linear-gradient(rgb(42, 41, 52) 0%, rgb(38, 36, 48) 100%);
-        }
-
-        &:focus {
-            outline: 0.1rem solid white;
-        }
-
-        &:nth-child(3) {
-            &::before {
-                background: linear-gradient(91.08deg, rgba(255, 115, 101, 0.5) 0%, rgba(250, 75, 57, 0.75) 100%);
-            }
-        }
-
-        &:nth-child(4)::before {
-            &:hover {
-                width: 100%;
-            }
-
-            background: linear-gradient(91.08deg, rgba(146, 235, 196, 0.5) 0%, rgba(20, 221, 137, 0.75) 100%);
-            height: 100%;
-            width: 0px;
-            position: absolute;
-            z-index: -1;
-            opacity: 1;
-            inset: -10px;
-        }
-
-        &:nth-child(5)::before {
-            background: linear-gradient(91.08deg, rgba(180, 144, 255, 0.5) 0%, rgba(125, 61, 229, 0.75) 100%);
-        }
-
-        &:nth-child(6)::before {
-            background: linear-gradient(rgb(146, 155, 235) 0%, rgb(41, 84, 238) 100%);
-        }
-
-        &::before {
-
-            &:nth-child(3) {
-                background: linear-gradient(91.08deg, rgba(146, 235, 196, 0.5) 0%, rgba(20, 221, 137, 0.75) 100%);
-            }
-
-            content: "";
-            // width: 0px;
-            // position: absolute;
-            // inset: -1px;
-            border-radius: .75rem;
-            // z-index: -1;
-            // opacity: 1;
-            transition: width 0.3s linear 0s;
-
-
-        }
-    }
-}
-
 div {
-    &.circle {
-        width: 0.75rem;
-        height: 0.75rem;
-        margin-inline-start: .5rem;
-        margin-block-end: .1rem;
-        border-radius: 0.5rem;
-    }
-
-    &.circle_arrow {
-        position: absolute;
-        right: .5rem;
-        bottom: .5rem;
-        width: 2rem;
-        height: 2rem;
-        background: linear-gradient(180deg, #2A2934 0%, #262430 100%);
-        border-radius: 1rem;
-
-        &>img {
-            &.arrow_icon {
-                margin-inline: 0;
-            }
-        }
-    }
-
-    &.testimonials_block {
-        min-width: 12rem;
-        width: 90%;
-        // max-width: 20rem;
-        max-width: 22.8125rem;
-        min-height: 21.2rem;
-        padding: 2.5rem 1.5rem;
-        margin-block-end: 1.875rem;
-        border-radius: 0.75rem;
-        background: linear-gradient(262deg, #3A3845 13.92%, #2C2A36 84.19%);
-
-        &>div:last-child {
-            gap: .5rem;
-        }
-    }
-
     &.clients_logo {
         width: 185px;
         flex-wrap: wrap;
@@ -523,73 +176,9 @@ div {
     }
 }
 
-span {
-    &.highlight {
-        color: #FE6D40;
-    }
-}
-
-button {
-    &.get_demo {
-        @include mixins.font_reusable("Inter", 500, 1rem);
-        @include mixins.button_reusable;
-        color: #FFF;
-        min-width: 12rem;
-        width: 90%;
-        max-width: 20rem;
-        height: 3.75rem;
-        background: linear-gradient(rgb(247, 111, 98) 0%, rgb(232, 72, 72) 100%);
-        box-shadow: rgba(244, 99, 67, 0.56) 0px 4px 24px;
-
-        &:hover {
-            background: linear-gradient(rgb(255, 149, 138) 0%, rgb(249, 105, 105) 100%);
-        }
-
-        &:focus-visible {
-            outline: 0.1rem solid white;
-        }
-
-    }
-}
-
 img {
-    &.arrow_icon {
-        margin-inline-start: auto;
-        margin-inline-end: 1rem;
-    }
-
-    &.green_polygon {
-        margin-inline-end: .375rem;
-    }
-
     &.twitter_logo {
         margin-inline-start: auto;
-    }
-}
-
-svg {
-    &.star_icon {
-        display: inline-flex;
-        transform: translateY(3%) scale(1.35);
-        margin-inline: .5rem;
-    }
-}
-
-figure {
-    &.ad_container {
-        position: relative;
-        margin-block-end: 1.75rem;
-    }
-}
-
-figcaption {
-    &.ad_value {
-        @include mixins.font_reusable("Inter", 600, 1.2rem);
-        gap: .15rem;
-        color: #FFF;
-        text-align: center;
-        line-height: normal;
-        position: absolute;
     }
 }
 
@@ -603,35 +192,12 @@ footer {
 
 @media screen and (min-width: 287px) {
     div {
-        &.circle_arrow {
-            position: static;
-        }
-
-        &.testimonials_block {
-            &>div:last-child {
-                flex-direction: row;
-                gap: 0;
-            }
-        }
-
-        &.testimonials_text_wrapper {
-            @include mixins.font_reusable("Inter", 600, 1rem);
-            margin-inline-start: 1rem;
-        }
-
         &.carousell_container {
             &>div {
                 flex-direction: row;
                 gap: 0;
 
             }
-        }
-    }
-
-    figcaption {
-        &.ad_value {
-            flex-direction: row;
-            font-size: 1.5rem;
         }
     }
 }

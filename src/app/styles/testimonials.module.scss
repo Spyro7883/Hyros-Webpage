@@ -1,0 +1,73 @@
+@use "./_mixins.scss" as mixins;
+
+h4 {
+    &.testimonials_title {
+        @include mixins.font_reusable("Inter", 800, 1.25rem);
+        color: #FFF;
+        text-align: center;
+        line-height: normal;
+        text-transform: uppercase;
+        margin-block-start: 4.375rem;
+        margin-block-end: 3.75rem;
+    }
+}
+
+div {
+
+    &.testimonials_block {
+        min-width: 12rem;
+        width: 90%;
+        // max-width: 20rem;
+        max-width: 22.8125rem;
+        min-height: 21.2rem;
+        padding: 2.5rem 1.5rem;
+        margin-block-end: 1.875rem;
+        border-radius: 0.75rem;
+        background: linear-gradient(262deg, #3A3845 13.92%, #2C2A36 84.19%);
+
+        &>div:last-child {
+            gap: .5rem;
+        }
+    }
+}
+
+span {
+    &.highlight {
+        color: #FE6D40;
+    }
+}
+
+p {
+    &.testimonials_message {
+        @include mixins.font_reusable("Inter", 500, 1.25rem);
+        margin-block-start: calc(0.875rem - 1px);
+        margin-block-end: 2rem;
+        color: rgb(201, 201, 220);
+    }
+
+    &.author_review_title {
+        color: #FFF;
+        letter-spacing: -0.02rem;
+    }
+
+    &.author_review_subtitle {
+        color: #C9C9DC;
+        letter-spacing: -0.02rem;
+    }
+}
+
+@media screen and (min-width: 287px) {
+    div {
+        &.testimonials_block {
+            &>div:last-child {
+                flex-direction: row;
+                gap: 0;
+            }
+        }
+
+        &.testimonials_text_wrapper {
+            @include mixins.font_reusable("Inter", 600, 1rem);
+            margin-inline-start: 1rem;
+        }
+    }
+}

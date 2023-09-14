@@ -24,19 +24,19 @@ export default function Header() {
             priority
           />
           {usersWidth >= 680 ? (
-            <nav className={`${styles.nav_bar} d-flex`}>
+            <nav className={`${styles.nav_bar} d-flex`} role="navigation">
               <ul className={`${styles.main_menu} d-flex`}>
-                <li className={styles.nav_link}><a>Features</a></li>
-                <li className={styles.nav_link}><a>Pricing</a></li>
-                <li className={styles.nav_link}><a>Company</a></li>
-                <li className={styles.nav_link}><a>Documentation</a></li>
-                <li className={styles.nav_link}><a>FAQ</a></li>
-                <li className={styles.nav_link}><a>Support</a></li>
+                <li className={styles.nav_link}><a href="/#">Features</a></li>
+                <li className={styles.nav_link}><a href="/#">Pricing</a></li>
+                <li className={styles.nav_link}><a href="/#">Company</a></li>
+                <li className={styles.nav_link}><a href="/#">Documentation</a></li>
+                <li className={styles.nav_link}><a href="/#">FAQ</a></li>
+                <li className={styles.nav_link}><a href="/#">Support</a></li>
               </ul>
               {usersWidth >= 722 ?
                 <ul className="d-flex">
-                  <li className={styles.nav_link}><a>Log in</a></li>
-                  <li className={`${styles.nav_link} ${styles.action}`}><a>Apply</a></li>
+                  <li className={styles.nav_link}><a href="/#">Log in</a></li>
+                  <li className={`${styles.nav_link} ${styles.action}`}><a href="/#">Apply</a></li>
                 </ul> : <></>}
             </nav>
           ) : (
