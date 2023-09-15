@@ -1,7 +1,15 @@
 @use "./_mixins.scss" as mixins;
 
+section {
+    &.container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
 h4 {
-    &.testimonials_title {
+    &.title {
         @include mixins.font_reusable("Inter", 800, 1.25rem);
         color: #FFF;
         text-align: center;
@@ -14,7 +22,7 @@ h4 {
 
 div {
 
-    &.testimonials_block {
+    &.block {
         min-width: 12rem;
         width: 90%;
         // max-width: 20rem;
@@ -28,6 +36,11 @@ div {
         &>div:last-child {
             gap: .5rem;
         }
+    }
+
+    &.author_block {
+        display: flex;
+        flex-direction: column;
     }
 }
 
@@ -58,7 +71,7 @@ p {
 
 @media screen and (min-width: 287px) {
     div {
-        &.testimonials_block {
+        &.block {
             &>div:last-child {
                 flex-direction: row;
                 gap: 0;

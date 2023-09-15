@@ -1,0 +1,113 @@
+@use "./_mixins.scss" as mixins;
+
+section {
+    &.carousell {
+        width: 100%;
+        border-radius: 0.75rem;
+        background: rgb(36, 34, 44);
+
+        overflow: auto;
+
+        &>div {
+            gap: 1.5rem;
+            overflow-x: scroll;
+            display: flex;
+            cursor: grab;
+            scrollbar-width: none;
+            transition: scrollLeft 0.3s ease;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+
+            &>div:nth-child(2) {
+                &>div {
+                    display: inline-flex;
+                    gap: .5rem;
+                    height: 100%;
+
+                    &>div {
+                        height: inherit;
+
+                        &>div {
+                            height: inherit;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+div {
+    &.carousell_container {
+        width: 18.5rem;
+        min-height: 17.25rem;
+        height: 100%;
+        padding: 1.25rem;
+        border-radius: 0.5rem;
+        background: #2C2A35;
+        display: flex !important;
+
+        &>p.twitter_review_subtitle:nth-child(2) {
+            margin-block-end: 1.5rem;
+        }
+
+        &>div {
+            margin-block-end: 1rem;
+            gap: .5rem;
+        }
+    }
+
+    &.twitter_review_icons {
+        justify-content: space-between;
+        margin-block-start: auto;
+    }
+}
+
+p {
+    &.twitter_review_title {
+        @include mixins.font_reusable("Inter", 600, 1rem);
+        color: #FFF;
+        letter-spacing: -0.02rem;
+    }
+
+    &.twitter_review_subtitle {
+        @include mixins.font_reusable("Inter", 600, 1rem);
+        color: #C9C9DC;
+        letter-spacing: -0.02rem;
+    }
+}
+
+h6 {
+    &.clients_text_two {
+        @include mixins.font_reusable("Inter", 500, 1rem);
+        text-align: center;
+        color: #FFF;
+        padding-block-end: 3rem;
+    }
+}
+
+img {
+    &.twitter_logo {
+        margin-inline-start: auto;
+    }
+}
+
+@media screen and (min-width: 287px) {
+    div {
+        &.carousell_container {
+            &>div {
+                flex-direction: row;
+                gap: 0;
+
+            }
+        }
+
+        &.testimonials_text_wrapper {
+            @include mixins.font_reusable("Inter", 600, 1rem);
+            margin-inline-start: 1rem;
+        }
+    }
+}

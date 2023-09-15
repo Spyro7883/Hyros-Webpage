@@ -1,4 +1,4 @@
-import styles from "../styles/business.module.scss";
+import styles from "../styles/business_type.module.scss";
 import Image from "next/image";
 
 type BusinessTypeProps = {

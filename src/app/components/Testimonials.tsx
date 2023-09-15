@@ -5,13 +5,13 @@ export default function Testimonials() {
     return (
         <>
             <section
-                className={`center-Oy d-flex clmn-dir`}
+                className={styles.container}
                 aria-label="Testimonials"
             >
-                <h4 className={styles.testimonials_title}>
+                <h4 className={styles.title}>
                     Testimonials from brands you may know
                 </h4>
-                <div className={styles.testimonials_block}>
+                <div className={styles.block}>
                     <Image
                         src="/Hyros_Quotes.svg"
                         alt="Quotes"
@@ -27,7 +27,7 @@ export default function Testimonials() {
                         </span>{" "}
                         I am with HYROS's world class team.
                     </p>
-                    <div className="d-flex clmn-dir">
+                    <div className={styles.author_block}>
                         <Image
                             src="/robbins.png"
                             alt="Tony Robbins"
@@ -45,7 +45,7 @@ export default function Testimonials() {
                         </div>
                     </div>
                 </div>
-                <div className={styles.testimonials_block}>
+                <div className={styles.block}>
                     <Image
                         src="/Hyros_Quotes.svg"
                         alt="Quotes"
@@ -59,7 +59,7 @@ export default function Testimonials() {
                         </span>{" "}
                         Has Helped us really see what’s really going on.
                     </p>
-                    <div className="d-flex clmn-dir">
+                    <div className={styles.author_block}>
                         <Image
                             src="/cardone.png"
                             alt="Grant Cardone"
@@ -77,7 +77,7 @@ export default function Testimonials() {
                         </div>
                     </div>
                 </div>
-                <div className={styles.testimonials_block}>
+                <div className={styles.block}>
                     <Image
                         src="/Hyros_Quotes.svg"
                         alt="Quotes"
@@ -90,7 +90,7 @@ export default function Testimonials() {
                         increase from increased tracking accurancy outweights the cost.
                         It's a simple math decision.
                     </p>
-                    <div className="d-flex clmn-dir">
+                    <div className={styles.author_block}>
                         <Image
                             src="/sam.png"
                             alt="Sam Ovens"
@@ -106,7 +106,7 @@ export default function Testimonials() {
                         </div>
                     </div>
                 </div>
-                <div className={styles.testimonials_block}>
+                <div className={styles.block}>
                     <Image
                         src="/Hyros_Quotes.svg"
                         alt="Quotes"
@@ -119,7 +119,7 @@ export default function Testimonials() {
                         we are already 300% more profitable within 72 hours of using the
                         software.
                     </p>
-                    <div className="d-flex clmn-dir">
+                    <div className={styles.author_block}>
                         <Image
                             src="/dan.png"
                             alt="Dan Henry"

@@ -1,7 +1,7 @@
 @use "./_mixins.scss" as mixins;
 
 section {
-    &.title {
+    &.container {
         margin-block-start: 6.5625rem;
         text-align: center;
         line-height: normal;
@@ -9,12 +9,12 @@ section {
 }
 
 p {
-    &.title_ads {
+    &.main {
         @include mixins.font_reusable("Inter", 700, 3rem);
         color: #EDEFF8;
     }
 
-    &.subtitle_ai {
+    &.secondary {
         @include mixins.font_reusable("Inter", 700, 3rem);
         justify-content: center;
         background: linear-gradient(180deg, #FF7365 0%, #FA4B39 100%);
@@ -23,8 +23,7 @@ p {
         -webkit-text-fill-color: transparent;
     }
 
-
-    &.ad_roi {
+    &.roi {
         @include mixins.font_reusable("Inter", 600, 1rem);
         margin-block-start: 1.5rem;
         color: #C5C5D8;

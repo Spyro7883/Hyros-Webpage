@@ -1,5 +1,30 @@
 @use "./_mixins.scss" as mixins;
 
+section {
+    &.second {
+        background: rgb(36, 34, 44);
+        padding-block: 3.125rem;
+
+        &>a.menu_box {
+            &:nth-child(2) div.circle {
+                background: linear-gradient(180deg, #FF7365 0%, #FA4B39 100%);
+            }
+
+            &:nth-child(3) div.circle {
+                background: linear-gradient(180deg, #92EBC4 0%, #14DD89 100%);
+            }
+
+            &:nth-child(4) div.circle {
+                background: linear-gradient(180deg, #B490FF 0%, #7D3DE5 100%);
+            }
+
+            &:nth-child(5) div.circle {
+                background: linear-gradient(180deg, #929BEB 0%, #2954EE 100%);
+            }
+        }
+    }
+}
+
 p {
     &.features {
         @include mixins.font_reusable("Inter", 800, 1.25rem);

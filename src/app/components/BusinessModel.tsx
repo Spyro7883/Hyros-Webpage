@@ -1,17 +1,20 @@
-import styles from "../styles/counter.module.scss";
+import styles from "../styles/business_model.module.scss";
 import Image from "next/image";
 
-type CounterProps = {
+type BusinessModelProps = {
     boxTitle: any[]
+    firstBusinessModel: boolean;
 }
 
-const Counter: React.FC<CounterProps> = ({ boxTitle }) => {
+const BusinessModel: React.FC<BusinessModelProps> = ({ boxTitle, firstBusinessModel }) => {
     return (<>
         <section
-            className={`center-Oy d-flex clmn-dir`}
-            aria-label="Ad Spend Counter"
+            className={`${!firstBusinessModel ? styles.second + " " : ""}center-Oy d-flex clmn-dir`}
+            aria-label="Business Model"
         >
-            <h3>
+            {!firstBusinessModel ? <p className={styles.features_subtitle}>
+                Click To See Features That Apply To YOUR Business Model
+            </p> : <h3>
                 <p className={styles.features}>
                     HYROS is{" "}
                     <span className={styles.highlight}>the HIGHEST level</span> of AD
@@ -20,7 +23,7 @@ const Counter: React.FC<CounterProps> = ({ boxTitle }) => {
                 <p className={styles.features_subtitle}>
                     Click To See Features That Apply To YOUR Business Model
                 </p>
-            </h3>
+            </h3>}
             {boxTitle.map((box_option) => (
                 <a className={styles.menu_box} key={box_option}>
                     <div className="text-center">
@@ -46,4 +49,4 @@ const Counter: React.FC<CounterProps> = ({ boxTitle }) => {
     </>)
 }
 
-export default Counter;
+export default BusinessModel;
