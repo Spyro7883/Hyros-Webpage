@@ -13,8 +13,8 @@ export default function Header() {
   };
   return (
     <>
-      <header className={styles.page}>
-        <div className={styles.container}>
+      <header className={styles.container}>
+        <div className={styles.content}>
           <Image
             src="/Logo_Hyros.svg"
             alt="Hyros Logo"
@@ -25,7 +25,7 @@ export default function Header() {
           />
           {usersWidth >= 680 ? (
             <nav className={styles.navbar} role="navigation">
-              <ul className={styles.main_menu}>
+              <ul className={styles.menu}>
                 <li className={styles.link}><a href="/#">Features</a></li>
                 <li className={styles.link}><a href="/#">Pricing</a></li>
                 <li className={styles.link}><a href="/#">Company</a></li>
@@ -33,10 +33,10 @@ export default function Header() {
                 <li className={styles.link}><a href="/#">FAQ</a></li>
                 <li className={styles.link}><a href="/#">Support</a></li>
               </ul>
-              {usersWidth >= 722 ?
-                <ul className="d-flex">
+              {usersWidth >= 730 ?
+                <ul className={styles.user}>
                   <li className={styles.link}><a href="/#">Log in</a></li>
-                  <li className={`${styles.link} ${styles.action}`}><a href="/#">Apply</a></li>
+                  <li className={styles.apply}><a href="/#">Apply</a></li>
                 </ul> : <></>}
             </nav>
           ) : (

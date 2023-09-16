@@ -2,7 +2,7 @@ import styles from "../styles/business_type.module.scss";
 import Image from "next/image";
 
 type BusinessTypeProps = {
-  businessList: any[];
+  businessList: string[];
 }
 
 const BusinessType: React.FC<BusinessTypeProps> = ({ businessList }) => {

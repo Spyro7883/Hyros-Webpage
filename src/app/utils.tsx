@@ -1,23 +1,73 @@
-const businessList = new Array();
+const businessList: string[] = [];
 businessList.push("Info / Education");
 businessList.push("E-Commerce");
 businessList.push("Call Funnels");
 businessList.push("Local Agency / Lead Gen");
 businessList.push("Organic / Social Media");
 
-const adSpendCounter = new Array();
+const adSpendCounter: string[] = [];
 adSpendCounter.push("3,650,500,000");
 adSpendCounter.push("3,650,500,174");
 adSpendCounter.push("3,650,500,357");
 adSpendCounter.push("3,650,502,785");
 
-const boxTitle = new Array();
+const boxTitle: string[] = [];
 boxTitle.push("Info Businesses");
 boxTitle.push("Call Funnels");
 boxTitle.push("E-Commerce");
 boxTitle.push("Agency");
 
-const twitterArray = new Array(
+type TestimonialPost = {
+  author_message: (string | {
+    content: string;
+    className: string;
+  })[];
+  author_name: string;
+  author_description: string;
+  author_profile: string;
+};
+
+type TwitterPost = {
+  post_title: string;
+  post_profile: string;
+  post_text: string;
+};
+
+const testimonials: TestimonialPost[] = [
+  {
+    author_message: [
+      "In just 6 months allowed us to scale our ad spend by 43% for Business Mastery and over 100% for Unleash The Power Within. ",
+      { content: "And I can't say how impressed.", className: "highlight" },
+      " I am with HYROS's world class team."
+    ],
+    author_name: "TONY ROBBINS Ad Team",
+    author_description: "The nation's top life and business strategist.",
+    author_profile: "robbins.png",
+  },
+  {
+    author_message: [
+      { content: "Has made such a huge difference in the GC camp.", className: "highlight" },
+      " Has Helped us really see what’s really going on."
+    ],
+    author_name: "GRANT CARDONE Ad Team",
+    author_description: "#1 sales and marketing trainer in the world",
+    author_profile: "cardone.png",
+  },
+  {
+    author_message: ["Everybody who uses it in my mastermind swears by it. The ROI increase from increased tracking accurancy outweights the cost. It's a simple math decision."],
+    author_name: "SAM OVENS",
+    author_description: "Founder Consulting.com",
+    author_profile: "sam.png",
+  },
+  {
+    author_message: ["With HYROS, I can see exactly where my sales are coming from and we are already 300 % more profitable within 72 hours of using the software."],
+    author_name: "DAN HENRY",
+    author_description: "Founder of GetClients.com and Closedeals.com",
+    author_profile: "dan.png",
+  },
+]
+
+const twitterContent: TwitterPost[] = [
   {
     post_title: "Douglas James",
     post_profile: "photo2.png",
@@ -72,6 +122,7 @@ const twitterArray = new Array(
     post_text:
       "Hey Guys, we run a digital agency and put True Tracking on a client of ours, the tracking was off by up to 40% on facebook. After setting up true tracking and tracking everything it allowed us to spot so many...",
   }
-);
+];
 
-export { businessList, adSpendCounter, boxTitle, twitterArray };
+export { businessList, adSpendCounter, boxTitle, testimonials, twitterContent };
+export type { TestimonialPost, TwitterPost };

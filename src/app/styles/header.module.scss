@@ -1,14 +1,14 @@
 @use "./_mixins.scss" as mixins;
 
 header {
-    &.page {
+    &.container {
         position: fixed;
         display: flex;
+        justify-content: center;
         align-items: center;
         min-width: 12rem;
         width: 100%;
-        padding: 26px 0;
-        justify-content: center;
+        padding: 1.625rem 0;
         background: rgba(29, 28, 36, 0.1);
         backdrop-filter: blur(32px);
         z-index: 1;
@@ -16,7 +16,7 @@ header {
 }
 
 div {
-    &.container {
+    &.content {
         width: 100%;
         display: flex;
         align-items: center;
@@ -55,8 +55,6 @@ span {
     }
 }
 
-
-
 img {
     &.logo {
         margin-inline-start: 5px;
@@ -70,20 +68,17 @@ nav {
         justify-content: center;
         align-items: center;
         flex-wrap: nowrap;
+        color: white;
 
         &>ul {
             list-style-type: none;
             padding: 0;
-
-
         }
-
-        color: white;
     }
 }
 
 ul {
-    &.main_menu {
+    &.menu {
         display: flex;
         margin-inline-end: auto;
 
@@ -105,10 +100,16 @@ ul {
             }
         }
     }
+
+    &.user {
+        display: flex
+    }
 }
 
 li {
-    &.link {
+
+    &.link,
+    &.apply {
         @include mixins.font_reusable("Inter", 500, .875rem);
         color: rgb(201, 201, 220);
         padding: .625rem .75rem;
@@ -119,7 +120,7 @@ li {
         }
     }
 
-    &.action {
+    &.apply {
         border-radius: .25rem;
         border: 1px solid rgb(238, 120, 108);
     }
@@ -127,27 +128,27 @@ li {
 
 @media screen and (min-width:680px) {
     header {
-        &.page {
+        &.container {
             padding: 1.25rem 0px;
         }
     }
 
     div {
-        &.container {
+        &.content {
             justify-content: flex-start;
         }
     }
 }
 
 @media screen and (min-width:768px) and (max-width:960px) {
-    ul.main_menu {
+    ul.menu {
         margin: 1px auto 0px 15px;
     }
 }
 
 @media screen and (min-width:960px) {
-    ul.main_menu {
+    ul.menu {
         margin: 1px auto 0px 69px;
-        gap: 25px;
+        gap: 1.625rem;
     }
 }

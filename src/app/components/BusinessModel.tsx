@@ -2,7 +2,7 @@ import styles from "../styles/business_model.module.scss";
 import Image from "next/image";
 
 type BusinessModelProps = {
-    boxTitle: any[]
+    boxTitle: string[]
     firstBusinessModel: boolean;
 }
 

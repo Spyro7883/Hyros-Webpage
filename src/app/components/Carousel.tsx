@@ -3,9 +3,10 @@ import Image from "next/image";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.scss";
 import "slick-carousel/slick/slick-theme.scss";
+import type { TwitterPost } from "../utils";
 
 type CarouselProps = {
-    twitterArray: any[]
+    twitterContent: TwitterPost[]
 }
 
 const sliderSettings = {
@@ -38,7 +39,7 @@ const sliderSettings = {
     ],
 };
 
-const Carousel: React.FC<CarouselProps> = ({ twitterArray }) => {
+const Carousel: React.FC<CarouselProps> = ({ twitterContent }) => {
 
     return (<>
 
@@ -47,7 +48,7 @@ const Carousel: React.FC<CarouselProps> = ({ twitterArray }) => {
                 Verified Across Thousands of Businesses
             </h6>
             <Slider {...sliderSettings}>
-                {twitterArray.map((tweet) => (
+                {twitterContent.map((tweet) => (
                     <div
                         className={`${styles.carousell_container} clmn-dir`}
                         key={tweet.post_title}

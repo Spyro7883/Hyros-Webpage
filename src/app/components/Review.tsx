@@ -3,7 +3,7 @@ import Image from "next/image";
 import StarIcon from "./StarIcon";
 
 type ReviewProps = {
-    adSpendCounter: any[];
+    adSpendCounter: string[];
     adValue: number;
 }
 
