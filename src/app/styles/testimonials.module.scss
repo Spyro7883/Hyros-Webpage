@@ -22,25 +22,26 @@ h4 {
 
 div {
 
-    &.block {
+    &.content {
         min-width: 12rem;
         width: 90%;
-        // max-width: 20rem;
         max-width: 22.8125rem;
         min-height: 21.2rem;
         padding: 2.5rem 1.5rem;
         margin-block-end: 1.875rem;
-        border-radius: 0.75rem;
+        border-radius: .75rem;
         background: linear-gradient(262deg, #3A3845 13.92%, #2C2A36 84.19%);
-
-        &>div:last-child {
-            gap: .5rem;
-        }
     }
 
-    &.author_block {
+    &.writer {
         display: flex;
         flex-direction: column;
+        gap: .5rem;
+    }
+
+    &.wrapper {
+        @include mixins.font_reusable("Inter", 600, 1rem);
+        margin-inline-start: 1rem;
     }
 }
 
@@ -51,19 +52,19 @@ span {
 }
 
 p {
-    &.testimonials_message {
+    &.message {
         @include mixins.font_reusable("Inter", 500, 1.25rem);
-        margin-block-start: calc(0.875rem - 1px);
+        margin-block-start: .875rem;
         margin-block-end: 2rem;
         color: rgb(201, 201, 220);
     }
 
-    &.author_review_title {
+    &.author {
         color: #FFF;
         letter-spacing: -0.02rem;
     }
 
-    &.author_review_subtitle {
+    &.description {
         color: #C9C9DC;
         letter-spacing: -0.02rem;
     }
@@ -71,16 +72,9 @@ p {
 
 @media screen and (min-width: 287px) {
     div {
-        &.block {
-            &>div:last-child {
-                flex-direction: row;
-                gap: 0;
-            }
-        }
-
-        &.testimonials_text_wrapper {
-            @include mixins.font_reusable("Inter", 600, 1rem);
-            margin-inline-start: 1rem;
+        &.writer {
+            flex-direction: row;
+            gap: 0;
         }
     }
 }

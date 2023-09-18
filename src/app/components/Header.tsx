@@ -5,7 +5,7 @@ import useWindowWidth from "../hooks/useWindow";
 
 export default function Header() {
   const [popup, setPopup] = useState(false);
-  const usersWidth = useWindowWidth();
+  const usersWidth = useWindowWidth() || 0;
 
   const handlePopup = () => {
     setPopup(!popup);

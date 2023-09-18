@@ -9,23 +9,23 @@ type BusinessModelProps = {
 const BusinessModel: React.FC<BusinessModelProps> = ({ boxTitle, firstBusinessModel }) => {
     return (<>
         <section
-            className={`${!firstBusinessModel ? styles.second + " " : ""}center-Oy d-flex clmn-dir`}
+            className={firstBusinessModel ? styles.first : styles.second}
             aria-label="Business Model"
         >
-            {!firstBusinessModel ? <p className={styles.features_subtitle}>
-                Click To See Features That Apply To YOUR Business Model
-            </p> : <h3>
-                <p className={styles.features}>
+            {firstBusinessModel ? <h3>
+                <p className={styles.title}>
                     HYROS is{" "}
                     <span className={styles.highlight}>the HIGHEST level</span> of AD
                     Tracking & AI Optimization for digital businesses
                 </p>
-                <p className={styles.features_subtitle}>
+                <p className={styles.subtitle}>
                     Click To See Features That Apply To YOUR Business Model
                 </p>
-            </h3>}
+            </h3> : <p className={styles.subtitle}>
+                Click To See Features That Apply To YOUR Business Model
+            </p>}
             {boxTitle.map((box_option) => (
-                <a className={styles.menu_box} key={box_option}>
+                <a className={styles.box} key={box_option}>
                     <div className="text-center">
                         <p className={styles.box_title}>{box_option}</p>
                         <div className={styles.circle} />

@@ -1,20 +1,15 @@
 @use "./_mixins.scss" as mixins;
 
 section {
-    &.carousell {
+    &.container {
         width: 100%;
-        border-radius: 0.75rem;
         background: rgb(36, 34, 44);
-
         overflow: auto;
 
         &>div {
-            gap: 1.5rem;
             overflow-x: scroll;
             display: flex;
             cursor: grab;
-            scrollbar-width: none;
-            transition: scrollLeft 0.3s ease;
 
             &::-webkit-scrollbar {
                 display: none;
@@ -26,12 +21,8 @@ section {
                     gap: .5rem;
                     height: 100%;
 
-                    &>div {
+                    &>div>div {
                         height: inherit;
-
-                        &>div {
-                            height: inherit;
-                        }
                     }
                 }
             }
@@ -41,47 +32,56 @@ section {
 }
 
 div {
-    &.carousell_container {
+    &.content {
+        display: flex !important;
+        flex-direction: column;
         width: 18.5rem;
         min-height: 17.25rem;
         height: 100%;
         padding: 1.25rem;
-        border-radius: 0.5rem;
+        border-radius: .5rem;
         background: #2C2A35;
-        display: flex !important;
-
-        &>p.twitter_review_subtitle:nth-child(2) {
-            margin-block-end: 1.5rem;
-        }
-
-        &>div {
-            margin-block-end: 1rem;
-            gap: .5rem;
-        }
     }
 
-    &.twitter_review_icons {
+    &.writer {
+        display: flex;
+        margin-block-end: 1rem;
+        gap: .5rem;
+    }
+
+    &.icons {
+        display: flex;
         justify-content: space-between;
         margin-block-start: auto;
+    }
+
+    &.wrapper {
+        @include mixins.font_reusable("Inter", 600, 1rem);
+        margin-inline-start: 1rem;
     }
 }
 
 p {
-    &.twitter_review_title {
-        @include mixins.font_reusable("Inter", 600, 1rem);
-        color: #FFF;
-        letter-spacing: -0.02rem;
-    }
 
-    &.twitter_review_subtitle {
+    &.name,
+    &.username,
+    &.message {
         @include mixins.font_reusable("Inter", 600, 1rem);
         color: #C9C9DC;
         letter-spacing: -0.02rem;
     }
+
+    &.name {
+        color: #FFF;
+    }
+
+    &.message {
+        margin-block-end: 1.35rem;
+    }
 }
 
 h6 {
-    &.clients_text_two {
+    &.title {
         @include mixins.font_reusable("Inter", 500, 1rem);
         text-align: center;
         color: #FFF;
@@ -90,24 +90,17 @@ h6 {
 }
 
 img {
-    &.twitter_logo {
+    &.twitter {
         margin-inline-start: auto;
     }
 }
 
 @media screen and (min-width: 287px) {
     div {
-        &.carousell_container {
-            &>div {
-                flex-direction: row;
-                gap: 0;
+        &.writer {
+            flex-direction: row;
+            gap: 0;
 
-            }
-        }
-
-        &.testimonials_text_wrapper {
-            @include mixins.font_reusable("Inter", 600, 1rem);
-            margin-inline-start: 1rem;
         }
     }
 }

@@ -43,17 +43,17 @@ const Carousel: React.FC<CarouselProps> = ({ twitterContent }) => {
 
     return (<>
 
-        <section className={`${styles.carousell}`} aria-label="Carousel">
-            <h6 className={`${styles.clients_text_two} d-flex text-center`}>
+        <section className={styles.container} aria-label="Carousel">
+            <h6 className={styles.title}>
                 Verified Across Thousands of Businesses
             </h6>
             <Slider {...sliderSettings}>
                 {twitterContent.map((tweet) => (
                     <div
-                        className={`${styles.carousell_container} clmn-dir`}
+                        className={styles.content}
                         key={tweet.post_title}
                     >
-                        <div className="d-flex">
+                        <div className={styles.writer}>
                             <Image
                                 src={`/${tweet.post_profile}`}
                                 alt="Picture 2"
@@ -61,27 +61,27 @@ const Carousel: React.FC<CarouselProps> = ({ twitterContent }) => {
                                 height={48}
                                 priority
                             />
-                            <div className={styles.testimonials_text_wrapper}>
-                                <p className={styles.twitter_review_title}>
+                            <div className={styles.wrapper}>
+                                <p className={styles.name}>
                                     {tweet.post_title}
                                 </p>
-                                <p className={styles.twitter_review_subtitle}>
+                                <p className={styles.username}>
                                     @{tweet.post_title}
                                 </p>
                             </div>
                             <Image
                                 src="/twitter.png"
                                 alt="Twitter Logo"
-                                className={styles.twitter_logo}
+                                className={styles.twitter}
                                 width={22}
                                 height={18}
                                 priority
                             />
                         </div>
-                        <p className={styles.twitter_review_subtitle}>
+                        <p className={styles.message}>
                             {tweet.post_text}
                         </p>
-                        <div className={`${styles.twitter_review_icons} d-flex`}>
+                        <div className={styles.icons}>
                             <Image
                                 src="/comment.png"
                                 alt="Comment Icon"

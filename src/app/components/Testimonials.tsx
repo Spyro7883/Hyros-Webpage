@@ -17,7 +17,7 @@ const Testimonials: React.FC<TestimonialsProps> = ({ testimonials }) => {
                     Testimonials from brands you may know
                 </h4>
                 {testimonials.map((post, id) => (
-                    <div className={styles.block} key={id}>
+                    <div className={styles.content} key={id}>
                         <Image
                             src="/Hyros_Quotes.svg"
                             alt="Quotes"
@@ -25,7 +25,7 @@ const Testimonials: React.FC<TestimonialsProps> = ({ testimonials }) => {
                             height={24}
                             priority
                         />
-                        <p className={styles.testimonials_message}>
+                        <p className={styles.message}>
                             {post.author_message.map((message, message_id) => {
                                 if (typeof message === 'string') {
                                     return <span key={message_id}>{message}</span>;
@@ -33,7 +33,7 @@ const Testimonials: React.FC<TestimonialsProps> = ({ testimonials }) => {
                                 return <span key={message_id} className={styles[message.className]}>{message.content}</span>;
                             })}
                         </p>
-                        <div className={styles.author_block}>
+                        <div className={styles.writer}>
                             <Image
                                 src={`/${post.author_profile}`}
                                 alt={post.author_name}
@@ -41,11 +41,11 @@ const Testimonials: React.FC<TestimonialsProps> = ({ testimonials }) => {
                                 height={57}
                                 priority
                             />
-                            <div className={styles.testimonials_text_wrapper}>
-                                <p className={styles.author_review_title}>
+                            <div className={styles.wrapper}>
+                                <p className={styles.author}>
                                     {post.author_name}
                                 </p>
-                                <p className={styles.author_review_subtitle}>
+                                <p className={styles.description}>
                                     {post.author_description}
                                 </p>
                             </div>
