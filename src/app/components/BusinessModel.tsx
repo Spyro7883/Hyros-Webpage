@@ -26,18 +26,17 @@ const BusinessModel: React.FC<BusinessModelProps> = ({ boxTitle, firstBusinessMo
             </p>}
             {boxTitle.map((box_option) => (
                 <a className={styles.box} key={box_option}>
-                    <div className="text-center">
-                        <p className={styles.box_title}>{box_option}</p>
+                    <div className={styles.wrapper}>
+                        <p className={styles.category}>{box_option}</p>
                         <div className={styles.circle} />
                     </div>
-                    <p className={styles.box_text}>
+                    <p className={styles.message}>
                         The most important tools and features for Info
                     </p>
-                    <div className={`${styles.circle_arrow} text-center`}>
+                    <div className={styles.arrow}>
                         <Image
                             src="/Logo_Arrow.png"
                             alt="Arrow Icon"
-                            className={styles.arrow_icon}
                             width={16}
                             height={14.5}
                             priority

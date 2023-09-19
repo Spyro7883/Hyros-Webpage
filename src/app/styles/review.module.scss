@@ -1,7 +1,7 @@
 @use "./_mixins.scss" as mixins;
 
 section {
-    &.trustpilot_review {
+    &.container {
         @include mixins.font_reusable("Inter", 500, 1rem);
         text-align: center;
         margin-block-start: 2.25rem;
@@ -9,7 +9,7 @@ section {
 }
 
 h2 {
-    &.ad_spend_title {
+    &.title {
         @include mixins.font_reusable("Inter", 800, 1.25rem);
         margin-block-end: 2.5rem;
         color: #EDEFF8;
@@ -19,24 +19,24 @@ h2 {
 }
 
 p {
-    &.message_review_text {
+    &.message {
         margin-block-end: 1rem;
         color: #C9C9DC;
     }
 
-    &.message_review_author {
-        margin-block-end: calc(1rem - 1px);
+    &.author {
+        margin-block-end: 1rem;
         color: #EDEFF8;
     }
 
-    &.ad_spend_subtitle {
+    &.description {
         margin-block-end: 6.25rem;
         color: #EDEFF8;
     }
 }
 
 svg {
-    &.star_icon {
+    &.icon {
         display: inline-flex;
         transform: translateY(3%) scale(1.35);
         margin-inline: .5rem;
@@ -44,15 +44,20 @@ svg {
 }
 
 figure {
-    &.ad_container {
-        position: relative;
+    &.spend {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         margin-block-end: 1.75rem;
     }
 }
 
 figcaption {
-    &.ad_value {
+    &.value {
         @include mixins.font_reusable("Inter", 600, 1.2rem);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         gap: .15rem;
         color: #FFF;
         text-align: center;
@@ -62,14 +67,14 @@ figcaption {
 }
 
 img {
-    &.green_polygon {
+    &.polygon {
         margin-inline-end: .375rem;
     }
 }
 
 @media screen and (min-width: 287px) {
     figcaption {
-        &.ad_value {
+        &.value {
             flex-direction: row;
             font-size: 1.5rem;
         }

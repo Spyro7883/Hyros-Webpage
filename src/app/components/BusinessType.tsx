@@ -9,10 +9,10 @@ const BusinessType: React.FC<BusinessTypeProps> = ({ businessList }) => {
   return (
     <>
       <section
-        className={styles.business_list}
+        className={styles.container}
         aria-label="Select your business type"
       >
-        <div className="d-flex center-Oy">
+        <div className={styles.select}>
           <Image
             src="/Logo_Business.png"
             alt="Business Logo"
@@ -20,26 +20,26 @@ const BusinessType: React.FC<BusinessTypeProps> = ({ businessList }) => {
             height={48}
             priority
           />
-          <p className={`${styles.business_type}`}>Select your business type</p>
+          <p className={`${styles.message}`}>Select your business type</p>
         </div>
         {businessList.map((business_option) => (
           <a
             href={`/#`}
-            className={styles.option_type}
+            className={styles.option}
             key={business_option}
           >
-            <p className={styles.business_type}>{business_option}</p>
+            <p className={styles.message}>{business_option}</p>
             <Image
               src="/Logo_Arrow.png"
               alt="Arrow Icon"
-              className={styles.arrow_icon}
+              className={styles.icon}
               width={16}
               height={16}
               priority
             />
           </a>
         ))}
-        <button className={styles.get_demo}>Just Get Me A Demo</button>
+        <button className={styles.demo}>Just Get Me A Demo</button>
       </section>
     </>
   );

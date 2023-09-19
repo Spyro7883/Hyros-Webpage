@@ -1,7 +1,7 @@
 @use "./_mixins.scss" as mixins;
 
 section {
-    &.business_list {
+    &.container {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -15,19 +15,28 @@ section {
     }
 }
 
+div {
+    &.select {
+        display: flex;
+        align-items: center;
+        min-width: 12rem;
+        width: 90%;
+        max-width: 20rem;
+    }
+}
+
 p {
-    &.business_type {
+    &.message {
         @include mixins.font_reusable("Inter", 600, 1rem);
-        margin-inline-start: 0.75rem;
+        margin-inline-start: .75rem;
 
         color: #C9C9DC;
         text-align: start;
-        line-height: normal;
     }
 }
 
 a {
-    &.option_type {
+    &.option {
         position: relative;
         display: flex;
         align-items: center;
@@ -38,14 +47,14 @@ a {
         padding-inline-start: 1rem;
         padding-block-end: .2rem;
         text-align: start;
-        border-radius: 0.5rem;
+        border-radius: .5rem;
         border: 1px solid #747380;
         background: #393745;
         text-decoration: none;
         cursor: pointer;
 
         &>p {
-            &.business_type {
+            &.message {
                 margin-inline-start: 0;
             }
         }
@@ -67,8 +76,8 @@ a {
             }
         }
 
-        &:focus {
-            outline: 0.1rem solid white;
+        &:focus-visible {
+            outline: .1rem solid white;
         }
 
         &:nth-child(2),
@@ -110,7 +119,7 @@ a {
 }
 
 button {
-    &.get_demo {
+    &.demo {
         @include mixins.font_reusable("Inter", 500, 1rem);
         @include mixins.button_reusable;
         color: #FFF;
@@ -126,14 +135,14 @@ button {
         }
 
         &:focus-visible {
-            outline: 0.1rem solid white;
+            outline: .1rem solid white;
         }
 
     }
 }
 
 img {
-    &.arrow_icon {
+    &.icon {
         margin-inline-start: auto;
         margin-inline-end: 1rem;
     }

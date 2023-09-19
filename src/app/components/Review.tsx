@@ -11,26 +11,26 @@ const Review: React.FC<ReviewProps> = ({ adSpendCounter, adValue }) => {
 
     return (<>
         <section
-            className={styles.trustpilot_review}
+            className={styles.container}
             aria-label="TrustPilot Review"
         >
-            <p className={styles.message_review_text}>
+            <p className={styles.message}>
                 "In just 6 months HYROS allowed us to scale our ad spend by 43% for
                 Business Mastery and over 100% for Unleash The Power Within."
             </p>
-            <p className={styles.message_review_author}>
+            <p className={styles.author}>
                 — TonyRobbins.com Ad Team
             </p>
-            <p className={styles.message_review_author}>
+            <p className={styles.author}>
                 Excellent 4.8 out of 5
-                <StarIcon className={styles.star_icon} />
+                <StarIcon className={styles.icon} />
                 Trustpilot
             </p>
 
-            <h2 className={styles.ad_spend_title}>
+            <h2 className={styles.title}>
                 3,000+ Businesses Have Used HYROS To Track Over
             </h2>
-            <figure className={`${styles.ad_container} d-flex text-center`}>
+            <figure className={styles.spend}>
                 <Image
                     src="/Hyros_Price_Counter.png"
                     alt="Price Counter Background"
@@ -40,12 +40,12 @@ const Review: React.FC<ReviewProps> = ({ adSpendCounter, adValue }) => {
                 />
 
                 <figcaption
-                    className={`${styles.ad_value} d-flex clmn-dir center-Oy`}
+                    className={styles.value}
                 >
                     <Image
                         src="/Hyros_Green_Polygon.png"
                         alt="Green Polygon"
-                        className={styles.green_polygon}
+                        className={styles.polygon}
                         width={12}
                         height={10}
                         priority
@@ -53,7 +53,7 @@ const Review: React.FC<ReviewProps> = ({ adSpendCounter, adValue }) => {
                     <p>{`$${adSpendCounter[adValue]}`}</p>
                 </figcaption>
             </figure>
-            <p className={styles.ad_spend_subtitle}>In Ad Spend</p>
+            <p className={styles.description}>In Ad Spend</p>
         </section>
     </>)
 }
