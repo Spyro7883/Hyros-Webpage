@@ -1,30 +1,36 @@
 @use "./_mixins.scss" as mixins;
 
 section {
-    &.clients {
+    &.container {
         @include mixins.font_reusable("Inter", 800, 1.25rem);
         width: 100%;
         min-height: 10rem;
         padding: 2.5rem 0 5.25rem 0;
-        border-radius: 0.75rem;
+        border-radius: .75rem;
         background: rgb(36, 34, 44);
         color: #FFF;
         line-height: 1.75rem;
-
-        &>div:nth-child(2) {
-            flex-wrap: wrap
-        }
     }
 }
 
 div {
-    &.clients_logo {
+    &.logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         width: 185px;
-        flex-wrap: wrap;
     }
 
-    &.logos_container {
+    &.content {
+        display: grid;
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
         justify-items: center;
+    }
+}
+
+h5 {
+    &.title {
+        display: flex;
+        justify-content: center;
     }
 }

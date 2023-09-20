@@ -25,7 +25,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main className={styles.page_layout}>
+      <main className={styles.layout}>
         <Title />
         <BusinessType businessList={businessList} />
         <Review adSpendCounter={adSpendCounter} adValue={adValue} />

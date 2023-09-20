@@ -53,34 +53,6 @@ h6 {
   --bg-light-mode: #ffffff;
 }
 
-// Reusable classes
-
-.d-grid {
-  display: grid;
-}
-
-.d-flex {
-  display: flex;
-}
-
-.clmn-dir {
-  flex-direction: column;
-}
-
-.center-Oy {
-  align-items: center;
-}
-
-.center-Ox {
-  justify-content: center;
-}
-
-.text-center {
-  justify-content: center;
-  align-items: center;
-}
-
 body {
   background: var(--bg-dark-mode);
-  flex-direction: column;
 }

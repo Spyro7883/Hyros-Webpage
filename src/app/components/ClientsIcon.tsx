@@ -7,7 +7,7 @@ type ClientsIconProps = {
 
 const ClientsIcon: React.FC<ClientsIconProps> = ({ logos, gridContainer }) => (
   <>
-    <div className={`${gridContainer} d-grid`}>
+    <div className={gridContainer}>
       <div className={logos}>
         <svg
           width="255"

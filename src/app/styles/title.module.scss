@@ -8,24 +8,62 @@ section {
     }
 }
 
-p {
-    &.main {
-        @include mixins.font_reusable("Inter", 700, 3rem);
+h1 {
+    &.title {
+        @include mixins.font_reusable("Inter", 700, clamp(3rem, 0.2vw, 6rem));
+        margin-block-end: 1.5rem;
         color: #EDEFF8;
+        transition: all 1s ease 0.2s;
     }
+}
 
-    &.secondary {
-        @include mixins.font_reusable("Inter", 700, 3rem);
-        justify-content: center;
+p {
+    &.roi {
+        @include mixins.font_reusable("Inter", 600, clamp(1rem, 0.2vw, 2rem));
+        color: #C5C5D8;
+        transition: all 1s ease 0.3s;
+    }
+}
+
+span {
+    &.highlight {
+        display: block;
         background: linear-gradient(180deg, #FF7365 0%, #FA4B39 100%);
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
+
+    }
+}
+
+@media screen and (min-width: 641px) {
+    h1.title {
+        display: flex;
+        justify-content: center;
+        letter-spacing: .25rem;
+        margin-block-end: 1.25rem;
     }
 
-    &.roi {
-        @include mixins.font_reusable("Inter", 600, 1rem);
-        margin-block-start: 1.5rem;
-        color: #C5C5D8;
+    span.highlight {
+        display: inline-block;
+        margin-inline-start: 0.75rem;
+    }
+
+    p.roi {
+        display: flex;
+        justify-content: center;
+        flex-wrap: nowrap;
+    }
+}
+
+@media screen and (min-width: 960px) {
+    h1.title {
+        font-size: clamp(5.75rem, 0.2vw, 11.5rem);
+        line-height: 1.05;
+    }
+
+    p.roi {
+        font-size: 1.5rem;
+        line-height: 2.25rem;
     }
 }

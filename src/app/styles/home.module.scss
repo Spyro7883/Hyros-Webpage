@@ -1,7 +1,8 @@
 main {
-    &.page_layout {
+    &.layout {
         display: flex;
         flex-direction: column;
         justify-content: center;
+        padding-inline: 1rem;
     }
 }
