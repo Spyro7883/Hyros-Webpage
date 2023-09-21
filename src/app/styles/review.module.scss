@@ -5,6 +5,7 @@ section {
         @include mixins.font_reusable("Inter", 500, 1rem);
         text-align: center;
         margin-block-start: 2.25rem;
+        grid-column: 2/3;
     }
 }
 

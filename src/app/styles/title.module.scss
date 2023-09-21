@@ -5,6 +5,7 @@ section {
         margin-block-start: 6.5625rem;
         text-align: center;
         line-height: normal;
+        grid-column: 2/3;
     }
 }
 
@@ -37,11 +38,18 @@ span {
 }
 
 @media screen and (min-width: 641px) {
+    section {
+        &.container {
+            text-align: start;
+            padding-inline: 1rem;
+        }
+    }
+
     h1.title {
         display: flex;
-        justify-content: center;
         letter-spacing: .25rem;
         margin-block-end: 1.25rem;
+        white-space: nowrap;
     }
 
     span.highlight {
@@ -50,20 +58,21 @@ span {
     }
 
     p.roi {
+        @include mixins.font_reusable("Inter", 600, clamp(1.25rem, 0.2vw, 2.5rem));
         display: flex;
-        justify-content: center;
         flex-wrap: nowrap;
     }
 }
 
 @media screen and (min-width: 960px) {
+
     h1.title {
         font-size: clamp(5.75rem, 0.2vw, 11.5rem);
         line-height: 1.05;
     }
 
     p.roi {
-        font-size: 1.5rem;
+        font-size: clamp(1.5rem, 0.2vw, 3rem);
         line-height: 2.25rem;
     }
 }

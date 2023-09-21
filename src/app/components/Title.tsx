@@ -5,7 +5,7 @@ export default function Title() {
         <>
             <section className={styles.container} aria-label="Title section">
                 <h1 className={styles.title}>
-                    Track Ads.
+                    Track ads.
                     <span className={styles.highlight}>Feed AI.</span>
                 </h1>
                 <p className={`${styles.roi}`}>

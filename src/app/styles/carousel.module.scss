@@ -5,6 +5,7 @@ section {
         width: 100%;
         background: rgb(36, 34, 44);
         overflow: auto;
+        grid-column: 2/3;
 
         &>div {
             overflow-x: scroll;
