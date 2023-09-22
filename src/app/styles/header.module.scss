@@ -147,8 +147,14 @@ li {
 }
 
 @media screen and (min-width:960px) {
-    ul.menu {
-        margin: 1px auto 0px 69px;
-        gap: 1.625rem;
+    ul {
+        &.menu {
+            margin: 1px auto 0px 69px;
+            gap: 1.625rem;
+        }
+
+        &.user {
+            gap: 1.625rem;
+        }
     }
 }

@@ -5,14 +5,7 @@ section {
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-block-start: 20rem;
-        grid-column: 2/3;
-
-        &>div:first-child {
-            min-width: 12rem;
-            width: 90%;
-            max-width: 20rem;
-        }
+        margin-block-start: 17.5rem;
     }
 }
 
@@ -21,8 +14,12 @@ div {
         display: flex;
         align-items: center;
         min-width: 12rem;
-        width: 90%;
-        max-width: 20rem;
+        max-width: 21.875rem;
+        margin-block-end: 1.875rem;
+
+        &>p.message {
+            font-weight: 500
+        }
     }
 }
 
@@ -33,6 +30,7 @@ p {
 
         color: #C9C9DC;
         text-align: start;
+        transition: all 1s ease 0.2s;
     }
 }
 
@@ -41,11 +39,11 @@ a {
         position: relative;
         display: flex;
         align-items: center;
-        min-width: 12rem;
-        width: 90%;
-        max-width: 20rem;
-        height: 2.375rem;
-        padding-inline-start: 1rem;
+        justify-content: flex-start;
+        width: 100%;
+        max-width: 15rem;
+        min-height: 2.375rem;
+        padding-inline: 1em;
         padding-block-end: .2rem;
         text-align: start;
         border-radius: .5rem;
@@ -54,14 +52,11 @@ a {
         text-decoration: none;
         cursor: pointer;
 
+
         &>p {
             &.message {
                 margin-inline-start: 0;
             }
-        }
-
-        &:nth-child(2) {
-            margin-block-start: 2rem;
         }
 
         &:nth-child(n):not(:first-child) {
@@ -124,12 +119,12 @@ button {
         @include mixins.font_reusable("Inter", 500, 1rem);
         @include mixins.button_reusable;
         color: #FFF;
-        min-width: 12rem;
-        width: 90%;
-        max-width: 20rem;
+        width: 100%;
+        max-width: 21.875rem;
         height: 3.75rem;
         background: linear-gradient(rgb(247, 111, 98) 0%, rgb(232, 72, 72) 100%);
         box-shadow: rgba(244, 99, 67, 0.56) 0px 4px 24px;
+        transition: all 1s ease 0.4s;
 
         &:hover {
             background: linear-gradient(rgb(255, 149, 138) 0%, rgb(249, 105, 105) 100%);
@@ -145,6 +140,51 @@ button {
 img {
     &.icon {
         margin-inline-start: auto;
-        margin-inline-end: 1rem;
+    }
+}
+
+@media screen and (min-width: 284px) {
+    a.option {
+        // justify-content: center;
+        max-width: 21.875rem;
+    }
+}
+
+@media screen and (min-width: 641px) {
+    section {
+        &.container {
+            grid-column: 2/3;
+            align-items: flex-start;
+            padding-inline: 1rem;
+            margin-block-start: 5.75rem;
+        }
+    }
+
+    p {
+        &.message {
+            @include mixins.font_reusable("Inter", 600, 1.25rem);
+            white-space: nowrap;
+            line-height: 2.215;
+        }
+    }
+
+    button {
+        &.demo {
+            @include mixins.font_reusable("Inter", 500, 1.25rem);
+        }
+    }
+}
+
+@media screen and (min-width: 960px) {
+    section {
+        &.container {
+            margin-block-start: 3.25rem;
+        }
+    }
+
+    div.select {
+        &>p.message {
+            @include mixins.font_reusable("Inter", 500, 1.5rem);
+        }
     }
 }
