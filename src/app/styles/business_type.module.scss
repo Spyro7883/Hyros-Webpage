@@ -13,12 +13,12 @@ div {
     &.select {
         display: flex;
         align-items: center;
-        min-width: 12rem;
         max-width: 21.875rem;
         margin-block-end: 1.875rem;
+        width: 100%;
 
         &>p.message {
-            font-weight: 500
+            font-weight: 500;
         }
     }
 }
@@ -41,7 +41,7 @@ a {
         align-items: center;
         justify-content: flex-start;
         width: 100%;
-        max-width: 15rem;
+        max-width: 21.875rem;
         min-height: 2.375rem;
         padding-inline: 1em;
         padding-block-end: .2rem;
@@ -140,13 +140,6 @@ button {
 img {
     &.icon {
         margin-inline-start: auto;
-    }
-}
-
-@media screen and (min-width: 284px) {
-    a.option {
-        // justify-content: center;
-        max-width: 21.875rem;
     }
 }
 

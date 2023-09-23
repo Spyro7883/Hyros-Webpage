@@ -13,24 +13,6 @@ section {
     &.second {
         background: rgb(36, 34, 44);
         padding-block: 3.125rem;
-
-        &>a.box {
-            &:nth-child(2) div.circle {
-                background: linear-gradient(180deg, #FF7365 0%, #FA4B39 100%);
-            }
-
-            &:nth-child(3) div.circle {
-                background: linear-gradient(180deg, #92EBC4 0%, #14DD89 100%);
-            }
-
-            &:nth-child(4) div.circle {
-                background: linear-gradient(180deg, #B490FF 0%, #7D3DE5 100%);
-            }
-
-            &:nth-child(5) div.circle {
-                background: linear-gradient(180deg, #929BEB 0%, #2954EE 100%);
-            }
-        }
     }
 }
 
@@ -74,7 +56,7 @@ div {
 
         align-items: center;
         justify-content: center;
-        position: absolute;
+        position: static;
         width: 2rem;
         height: 2rem;
         right: .5rem;
@@ -85,6 +67,13 @@ div {
 
     &.wrapper {
         align-items: center;
+    }
+
+    &.container {
+        display: flex;
+        flex-direction: column;
+        margin-block-start: 3rem;
+        gap: 2.25rem;
     }
 }
 
@@ -98,39 +87,30 @@ a {
     &.box {
         @include mixins.font_reusable("Inter", 600, 1rem);
         position: relative;
-        min-width: 11.4rem;
-        width: 90%;
         max-width: 15.9375rem;
-        height: 9.75rem;
+        min-height: 9.75rem;
         padding-inline: 1.25rem;
         padding-block: 1rem;
-        margin-block-end: 2.25rem;
         border-radius: 1rem;
         background: linear-gradient(262deg, #3A3845 13.92%, #2C2A36 84.19%);
 
-        &:nth-child(2) {
-            margin-block-start: 2rem;
-        }
-
         &>div {
             display: inline-flex;
-
-
         }
 
-        &:nth-child(3) div.circle {
+        &:first-child div.circle {
             background: linear-gradient(180deg, #FF7365 0%, #FA4B39 100%);
         }
 
-        &:nth-child(4) div.circle {
+        &:nth-child(2) div.circle {
             background: linear-gradient(180deg, #92EBC4 0%, #14DD89 100%);
         }
 
-        &:nth-child(5) div.circle {
+        &:nth-child(3) div.circle {
             background: linear-gradient(180deg, #B490FF 0%, #7D3DE5 100%);
         }
 
-        &:nth-child(6) div.circle {
+        &:nth-child(4) div.circle {
             background: linear-gradient(180deg, #929BEB 0%, #2954EE 100%);
         }
 
@@ -190,10 +170,40 @@ a {
     }
 }
 
-@media screen and (min-width: 287px) {
+@media screen and (min-width: 641px) {
+    p {
+        &.title {
+            font-size: 2rem;
+            line-height: 1.5;
+        }
+
+        &.subtitle {
+            font-size: 1.25rem;
+            line-height: 1.4;
+        }
+    }
+
     div {
-        &.arrow {
-            position: static;
+        &.container {
+            justify-content: space-between;
+            flex-wrap: wrap;
+            max-width: 33.75rem;
+            flex-direction: row;
+            gap: 1.875rem;
+        }
+    }
+}
+
+@media screen and (min-width: 960px) {
+    p {
+        &.title {
+            font-size: 3rem;
+            line-height: 1.33;
+        }
+
+        &.subtitle {
+            font-size: 1.75rem;
+            line-height: 1.43;
         }
     }
 }

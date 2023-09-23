@@ -55,7 +55,7 @@ figure {
 
 figcaption {
     &.value {
-        @include mixins.font_reusable("Inter", 600, 1.2rem);
+        @include mixins.font_reusable("Inter", 600, 0.8rem);
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -73,11 +73,73 @@ img {
     }
 }
 
-@media screen and (min-width: 287px) {
+@media screen and (min-width: 227px) {
+    figcaption {
+        &.value {
+            font-size: 1.2rem;
+        }
+    }
+}
+
+@media screen and (min-width: 284px) {
     figcaption {
         &.value {
             flex-direction: row;
             font-size: 1.5rem;
+        }
+    }
+}
+
+@media screen and (min-width: 641px) {
+    h2 {
+        &.title {
+            font-size: 2rem;
+            line-height: 1.34;
+        }
+    }
+
+    p {
+        &.description {
+            font-size: 1.25rem;
+            line-height: 1.5;
+        }
+    }
+}
+
+@media screen and (min-width: 960px) {
+    h2 {
+        &.title {
+            font-size: 3rem;
+            line-height: 4rem;
+            line-height: 1.34;
+        }
+    }
+
+    p {
+        &.message {
+            font-size: 1.125rem;
+            line-height: 1.5rem;
+            line-height: 1.33;
+        }
+    }
+
+    p {
+        &.description {
+            font-size: 1.5rem;
+            line-height: 1.5;
+        }
+    }
+
+    figcaption {
+        &.value {
+            font-size: 3rem;
+        }
+    }
+
+    img {
+        &.polygon {
+            width: 1.5rem;
+            height: 1.25rem;
         }
     }
 }

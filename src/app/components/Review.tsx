@@ -1,6 +1,7 @@
 import styles from "../styles/review.module.scss";
 import Image from "next/image";
 import StarIcon from "./StarIcon";
+import useWindowWidth from "../hooks/useWindow";
 
 type ReviewProps = {
     adSpendCounter: string[];
@@ -8,6 +9,7 @@ type ReviewProps = {
 }
 
 const Review: React.FC<ReviewProps> = ({ adSpendCounter, adValue }) => {
+    const usersWidth = useWindowWidth() || 0;
 
     return (<>
         <section
@@ -34,7 +36,7 @@ const Review: React.FC<ReviewProps> = ({ adSpendCounter, adValue }) => {
                 <Image
                     src="/Hyros_Price_Counter.png"
                     alt="Price Counter Background"
-                    width={415}
+                    width={553}
                     height={96}
                     priority
                 />
@@ -42,14 +44,15 @@ const Review: React.FC<ReviewProps> = ({ adSpendCounter, adValue }) => {
                 <figcaption
                     className={styles.value}
                 >
-                    <Image
-                        src="/Hyros_Green_Polygon.png"
-                        alt="Green Polygon"
-                        className={styles.polygon}
-                        width={12}
-                        height={10}
-                        priority
-                    />
+                    {usersWidth >= 284 ?
+                        <Image
+                            src="/Hyros_Green_Polygon.png"
+                            alt="Green Polygon"
+                            className={styles.polygon}
+                            width={12}
+                            height={10}
+                            priority
+                        /> : ""}
                     <p>{`$${adSpendCounter[adValue]}`}</p>
                 </figcaption>
             </figure>
