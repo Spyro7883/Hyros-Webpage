@@ -5,7 +5,7 @@ section {
         @include mixins.font_reusable("Inter", 500, 1rem);
         text-align: center;
         margin-block-start: 2.25rem;
-        grid-column: 2/3;
+
     }
 }
 
@@ -91,6 +91,12 @@ img {
 }
 
 @media screen and (min-width: 641px) {
+    section {
+        &.container {
+            grid-column: 2/3;
+        }
+    }
+
     h2 {
         &.title {
             font-size: 2rem;

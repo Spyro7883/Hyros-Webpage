@@ -5,7 +5,7 @@ section {
         display: flex;
         flex-direction: column;
         align-items: center;
-        grid-column: 2/3;
+        margin-block: 3.125rem;
     }
 }
 
@@ -16,20 +16,22 @@ h4 {
         text-align: center;
         line-height: normal;
         text-transform: uppercase;
-        margin-block-start: 4.375rem;
+        margin-block-start: 3.125rem;
         margin-block-end: 3.75rem;
     }
 }
 
 div {
+    &.group {
+        display: flex;
+        flex-direction: column;
+        gap: 1.875rem;
+    }
 
     &.content {
-        min-width: 12rem;
-        width: 90%;
         max-width: 22.8125rem;
         min-height: 21.2rem;
-        padding: 2.5rem 1.5rem;
-        margin-block-end: 1.875rem;
+        padding: 1rem 0;
         border-radius: .75rem;
         background: linear-gradient(262deg, #3A3845 13.92%, #2C2A36 84.19%);
     }
@@ -42,7 +44,6 @@ div {
 
     &.wrapper {
         @include mixins.font_reusable("Inter", 600, 1rem);
-        margin-inline-start: 1rem;
     }
 }
 
@@ -55,8 +56,7 @@ span {
 p {
     &.message {
         @include mixins.font_reusable("Inter", 500, 1.25rem);
-        margin-block-start: .875rem;
-        margin-block-end: 2rem;
+        margin-block: 0 2rem;
         color: rgb(201, 201, 220);
     }
 
@@ -73,9 +73,56 @@ p {
 
 @media screen and (min-width: 287px) {
     div {
+        &.content {
+            padding: 2.5rem 1.5rem;
+        }
+
         &.writer {
             flex-direction: row;
             gap: 0;
+        }
+
+        &.wrapper {
+            margin-inline-start: 1rem;
+        }
+    }
+
+    p {
+        &.message {
+            margin-block-start: .875rem;
+        }
+    }
+}
+
+@media screen and (min-width: 641px) {
+    section {
+        &.container {
+            grid-column: 2/3;
+        }
+    }
+
+    div {
+        &.group {
+            justify-content: space-between;
+            flex-direction: row;
+            flex-wrap: wrap;
+            max-width: 71.375rem;
+        }
+    }
+}
+
+@media screen and (min-width:960px) {
+    h4 {
+        &.title {
+            font-size: 3rem;
+            line-height: 1.34;
+            margin-block-start: 0;
+        }
+    }
+
+    section {
+        &.container {
+            margin-block: 10.25rem;
         }
     }
 }
