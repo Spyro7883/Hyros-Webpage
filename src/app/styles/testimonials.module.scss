@@ -40,10 +40,15 @@ div {
         display: flex;
         flex-direction: column;
         gap: .5rem;
+
+        &>img:first-child {
+            border-radius: .75rem
+        }
     }
 
     &.wrapper {
         @include mixins.font_reusable("Inter", 600, 1rem);
+        margin-block: auto;
     }
 }
 
@@ -102,11 +107,31 @@ p {
     }
 
     div {
+        &.content {
+            display: flex;
+            flex-direction: column;
+            max-width: none;
+        }
+
         &.group {
-            justify-content: space-between;
-            flex-direction: row;
-            flex-wrap: wrap;
-            max-width: 71.375rem;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        &.writer {
+            margin-block-start: auto;
+        }
+    }
+
+    p {
+        &.message {
+            word-spacing: 2px;
+        }
+
+        &.author {
+            font-size: 1.25rem;
+            line-height: 1.4;
+            letter-spacing: -0.02em;
         }
     }
 }
@@ -123,6 +148,31 @@ p {
     section {
         &.container {
             margin-block: 10.25rem;
+        }
+    }
+
+    p {
+        &.message {
+            font-size: 1.5rem;
+            margin-block: 0 1.25rem;
+        }
+    }
+
+    div {
+        &.writer {
+            justify-content: flex-start;
+            padding-inline-start: 2.875rem;
+
+            &>img:first-child {
+                width: 4.5rem;
+                height: 4.5rem;
+            }
+        }
+
+        &.message-container {
+            display: flex;
+            gap: 1.25rem;
+
         }
     }
 }

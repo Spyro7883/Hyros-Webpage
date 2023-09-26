@@ -21,22 +21,24 @@ const Testimonials: React.FC<TestimonialsProps> = ({ testimonials }) => {
                 <div className={styles.group}>
                     {testimonials.map((post, id) => (
                         <div className={styles.content} key={id}>
-                            {usersWidth >= 287 ?
-                                <Image
-                                    src="/Hyros_Quotes.svg"
-                                    alt="Quotes"
-                                    width={26}
-                                    height={24}
-                                    priority
-                                /> : ""}
-                            <p className={styles.message}>
-                                {post.author_message.map((message, message_id) => {
-                                    if (typeof message === 'string') {
-                                        return <span key={message_id}>{message}</span>;
-                                    }
-                                    return <span key={message_id} className={styles[message.className]}>{message.content}</span>;
-                                })}
-                            </p>
+                            <div className={styles["message-container"]}>
+                                {usersWidth >= 287 ?
+                                    <Image
+                                        src="/Hyros_Quotes.svg"
+                                        alt="Quotes"
+                                        width={26}
+                                        height={24}
+                                        priority
+                                    /> : ""}
+                                <p className={styles.message}>
+                                    {post.author_message.map((message, message_id) => {
+                                        if (typeof message === 'string') {
+                                            return <span key={message_id}>{message}</span>;
+                                        }
+                                        return <span key={message_id} className={styles[message.className]}>{message.content}</span>;
+                                    })}
+                                </p>
+                            </div>
                             <div className={styles.writer}>
                                 {usersWidth >= 287 ?
                                     <Image
