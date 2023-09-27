@@ -11,7 +11,7 @@ section {
 
 h4 {
     &.title {
-        @include mixins.font_reusable("Inter", 800, 1.25rem);
+        @include mixins.font_reusable("Inter", 800, 1rem);
         color: #FFF;
         text-align: center;
         line-height: normal;
@@ -77,6 +77,12 @@ p {
 }
 
 @media screen and (min-width: 287px) {
+    h4 {
+        &.title {
+            font-size: 1.25rem;
+        }
+    }
+
     div {
         &.content {
             padding: 2.5rem 1.5rem;

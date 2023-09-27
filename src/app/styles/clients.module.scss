@@ -19,12 +19,17 @@ div {
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 185px;
+        width: 7.5rem;
+
+        &>svg,
+        &>img {
+            width: 11.5rem;
+        }
     }
 
     &.content {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(7.5rem, 1fr));
         justify-items: center;
     }
 }
@@ -33,5 +38,67 @@ h5 {
     &.title {
         display: flex;
         justify-content: center;
+        margin-block-end: 1.5rem;
+    }
+}
+
+@media screen and (min-width: 370px) {
+    div {
+        &.content {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
+
+@media screen and (min-width: 641px) {
+    div {
+        &.logo {
+            width: 50%;
+
+            &>svg {
+                width: auto;
+            }
+
+            &>img {
+                width: 12.5rem;
+                height: 5rem;
+            }
+        }
+    }
+
+    h5 {
+        &.title {
+            font-size: 2rem;
+            line-height: 1.5;
+        }
+    }
+}
+
+@media screen and (min-width: 960px) {
+    section {
+        &.container {
+            padding: 5rem 0 7.5rem;
+        }
+    }
+
+    h5 {
+        &.title {
+            font-size: 3rem;
+            line-height: 1.33;
+            margin-block-end: 2rem;
+        }
+    }
+
+    div {
+        &.content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        &.logo {
+            width: 25%;
+            margin-block-end: 1.875rem;
+        }
     }
 }
