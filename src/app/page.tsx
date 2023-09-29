@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import { businessList, adSpendCounter, boxTitle, testimonials, twitterContent, } from "./utils";
+import { businessList, adSpendCounter, modelProp, testimonials, twitterContent, } from "./utils";
 import styles from "./styles/home.module.scss";
 import Header from "./components/Header";
 import Title from "./components/Title";
@@ -29,11 +29,11 @@ export default function Home() {
         <Title />
         <BusinessType businessList={businessList} />
         <Review adSpendCounter={adSpendCounter} adValue={adValue} />
-        <BusinessModel boxTitle={boxTitle} firstBusinessModel={true} />
+        <BusinessModel modelProp={modelProp} firstBusinessModel={true} />
         <Testimonials testimonials={testimonials} />
         <Clients />
         <Carousel twitterContent={twitterContent} />
-        <BusinessModel boxTitle={boxTitle} firstBusinessModel={false} />
+        <BusinessModel modelProp={modelProp} firstBusinessModel={false} />
       </main>
       <Footer />
     </>

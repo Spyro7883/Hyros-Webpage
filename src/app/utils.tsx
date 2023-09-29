@@ -11,11 +11,10 @@ adSpendCounter.push("3,650,500,174");
 adSpendCounter.push("3,650,500,357");
 adSpendCounter.push("3,650,502,785");
 
-const boxTitle: string[] = [];
-boxTitle.push("Info Businesses");
-boxTitle.push("Call Funnels");
-boxTitle.push("E-Commerce");
-boxTitle.push("Agency");
+type ModelProp = {
+  post_title: string;
+  post_message: string;
+}
 
 type TestimonialPost = {
   author_message: (string | {
@@ -32,6 +31,21 @@ type TwitterPost = {
   post_profile: string;
   post_text: string;
 };
+
+const modelProp: ModelProp[] = [{
+  post_title: "Info Businesses",
+  post_message: "Info",
+}, {
+  post_title: "Call Funnels",
+  post_message: "Calls",
+}, {
+  post_title: "E-Commerce",
+  post_message: "E-Commerce",
+},
+{
+  post_title: "Agency",
+  post_message: "Agency",
+}];
 
 const testimonials: TestimonialPost[] = [
   {
@@ -124,5 +138,5 @@ const twitterContent: TwitterPost[] = [
   }
 ];
 
-export { businessList, adSpendCounter, boxTitle, testimonials, twitterContent };
-export type { TestimonialPost, TwitterPost };
+export { businessList, adSpendCounter, modelProp, testimonials, twitterContent };
+export type { ModelProp, TestimonialPost, TwitterPost };

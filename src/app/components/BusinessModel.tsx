@@ -1,13 +1,14 @@
 import styles from "../styles/business_model.module.scss";
 import Image from "next/image";
 import useWindowWidth from "../hooks/useWindow";
+import type { ModelProp } from "../utils";
 
 type BusinessModelProps = {
-    boxTitle: string[]
+    modelProp: ModelProp[];
     firstBusinessModel: boolean;
 }
 
-const BusinessModel: React.FC<BusinessModelProps> = ({ boxTitle, firstBusinessModel }) => {
+const BusinessModel: React.FC<BusinessModelProps> = ({ modelProp, firstBusinessModel }) => {
     const usersWidth = useWindowWidth() || 0;
     return (<>
         <section
@@ -27,15 +28,15 @@ const BusinessModel: React.FC<BusinessModelProps> = ({ boxTitle, firstBusinessMo
                 Click To See Features That Apply To YOUR Business Model
             </p>}
             <div className={styles.container}>
-                {boxTitle.map((box_option) => (
-                    <a className={styles.box} key={box_option}>
+                {modelProp.map((model) => (
+                    <a className={styles.box} key={model.post_title}>
                         <div className={styles.wrapper}>
-                            <p className={styles.category}>{box_option}</p>
+                            <p className={styles.category}>{model.post_title}</p>
                             {usersWidth >= 287 ?
                                 <div className={styles.circle} /> : ""}
                         </div>
                         <p className={styles.message}>
-                            The most important tools and features for Info
+                            The most important tools and features for {model.post_message}
                         </p>
                         {usersWidth >= 287 ?
                             <div className={styles.arrow}>

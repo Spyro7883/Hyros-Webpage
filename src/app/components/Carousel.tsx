@@ -13,25 +13,31 @@ const sliderSettings = {
     infinite: true,
     speed: 300,
     slidesToScroll: 1,
-    slidesToShow: 4,
+    slidesToShow: 5,
     draggable: true,
     swipeToSlide: true,
     cssEase: "ease",
     responsive: [
         {
-            breakpoint: 1920,
+            breakpoint: 1240,
+            settings: {
+                slidesToShow: 4,
+            },
+        },
+        {
+            breakpoint: 960,
             settings: {
                 slidesToShow: 3,
             },
         },
         {
-            breakpoint: 1024,
+            breakpoint: 920,
             settings: {
                 slidesToShow: 2,
             },
         },
         {
-            breakpoint: 600,
+            breakpoint: 500,
             settings: {
                 slidesToShow: 1,
             },

@@ -2,14 +2,8 @@
 
 footer {
     &.container {
-        min-height: 42.875rem;
         background: #101010;
-        padding: 37px 12px 120px 12px;
-
-        &>div {
-            margin-inline: 1rem;
-            max-width: 1142px
-        }
+        padding: 2.5rem .75rem;
     }
 }
 
@@ -17,19 +11,30 @@ p {
     &.title {
         @include mixins.font_reusable("Inter", 800, 1.25rem);
         color: #FFF;
-        line-height: 1.375rem;
+        line-height: 1.42;
         padding-block: 1rem 3rem;
     }
 
     &.row-title {
-        @include mixins.font_reusable("Inter", 600, 0.875rem);
+        @include mixins.font_reusable("Inter", 600, .875rem);
         margin-inline-end: auto;
         color: #76768D;
         line-height: 1.375rem;
     }
 
+    &.row {
+        display: none;
+        line-height: 1.25rem;
+        color: rgb(201, 201, 220);
+        text-decoration: none;
+        font-size: 0.875rem;
+        font-weight: 500;
+        text-align: start
+    }
+
     &.copyright {
         @include mixins.font_reusable("Inter", 600, 1rem);
+        margin-inline: 1rem;
         margin-block-start: 3rem;
         color: #76768D;
         line-height: 1.5rem;
@@ -38,13 +43,59 @@ p {
 }
 
 div {
-    &.content {
+    &.layout {
         margin-inline: 1rem;
+        max-width: 1142px
     }
 
-    &.row {
+    &.title-container {
+        flex: 1 1 24%;
+    }
+
+    &.wrapper {
         display: flex;
         min-height: 3rem;
         align-items: center;
+    }
+}
+
+@media screen and (min-width: 641px) {
+    div {
+        &.layout {
+            display: flex;
+            margin-block-end: 6.75rem;
+        }
+
+        &.title-container {
+            padding-inline-end: .625rem;
+        }
+
+        &.wrapper {
+            flex: 1 1 19%;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+
+    p {
+        &.title {
+            @include mixins.font_reusable(inherit, 600, 1.125rem);
+            line-height: 2;
+        }
+
+        &.row-title {
+            padding-inline-start: .75rem;
+            margin-block-end: .75rem;
+        }
+
+        &.row {
+            display: block;
+        }
+    }
+
+    img {
+        &.arrow {
+            display: none;
+        }
     }
 }

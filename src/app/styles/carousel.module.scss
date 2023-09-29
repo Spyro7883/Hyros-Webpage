@@ -5,6 +5,7 @@ section {
         width: 100%;
         background: rgb(36, 34, 44);
         overflow: auto;
+        padding-block: 2rem 4.125rem;
 
         &>div {
             overflow-x: scroll;
