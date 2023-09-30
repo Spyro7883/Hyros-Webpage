@@ -27,12 +27,11 @@ export default function Footer() {
                         height={6}
                         priority
                     />
-                    <p className={styles.row}>Features</p>
-                    <p className={styles.row}>Faq</p>
-                    <p className={styles.row}>Affiliate</p>
-                    <p className={styles.row}>Agency</p>
-                    <p className={styles.row}>Suggested</p>
-                    <p className={styles.row}>Agencies</p>
+                    <a className={styles.row}>Features</a>
+                    <a className={styles.row}>Faq</a>
+                    <a className={styles.row}>Affiliate</a>
+                    <a className={styles.row}>Agency</a>
+                    <a className={styles.row}>Suggested Agencies</a>
                 </div>
                 <div className={styles.wrapper}>
                     <p className={styles["row-title"]}>Legal</p>
@@ -44,6 +43,9 @@ export default function Footer() {
                         height={6}
                         priority
                     />
+                    <a className={styles.row}>Terms of Service</a>
+                    <a className={styles.row}>Privacy</a>
+                    <a className={styles.row}>Cookies</a>
                 </div>
                 <div className={styles.wrapper}>
                     <p className={styles["row-title"]}>About us</p>
@@ -55,6 +57,9 @@ export default function Footer() {
                         height={6}
                         priority
                     />
+                    <a className={styles.row}>Company and Vision</a>
+                    <a className={styles.row}>Pricing</a>
+                    <a className={styles.row}>Career</a>
                 </div>
                 <div className={styles.wrapper}>
                     <p className={styles["row-title"]}>Support</p>
@@ -66,11 +71,19 @@ export default function Footer() {
                         height={6}
                         priority
                     />
+                    <a className={styles.row}>Documentation</a>
+                    <a className={styles.row}>Facebook Group</a>
+                    <a className={styles.row}>Contact US</a>
+                    <a className={styles.row}>API</a>
                 </div>
+
             </div>
-            <p className={styles.copyright}>
-                © 2022 Hyros INC. All rights reserved.
-            </p>
+            <div className={styles["copyright-container"]}>
+                <p className={styles.copyright}>
+                    © 2022 Hyros INC. All rights reserved.
+                </p>
+            </div>
+
 
         </footer></>)
 }

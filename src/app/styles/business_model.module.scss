@@ -86,7 +86,7 @@ a {
     &.box {
         @include mixins.font_reusable("Inter", 600, 1rem);
         position: relative;
-        max-width: 15.9375rem;
+        max-width: 16.85rem;
         min-height: 9.75rem;
         padding-inline: 1.25rem;
         padding-block: 1rem;
@@ -195,7 +195,7 @@ a {
         &.container {
             justify-content: space-between;
             flex-wrap: wrap;
-            max-width: 33.75rem;
+            max-width: 35.75rem;
             flex-direction: row;
             gap: 1.875rem;
         }
@@ -203,6 +203,12 @@ a {
 }
 
 @media screen and (min-width: 960px) {
+    a {
+        &.box {
+            width: 100%;
+        }
+    }
+
     p {
         &.title {
             font-size: 3rem;
@@ -223,6 +229,27 @@ a {
         &.container {
             max-width: 100%;
             flex-wrap: nowrap;
+            gap: 1rem;
+            margin-inline: 1rem;
+            margin-block-end: 1.875rem;
+        }
+    }
+
+    section {
+        &.first {
+            padding: 5rem 0 3.125rem
+        }
+
+        &.second {
+            padding: 6.25rem 0 3.125rem
+        }
+    }
+}
+
+@media screen and (min-width: 1060px) {
+    div {
+        &.container {
+            margin-inline: 0;
         }
     }
 }

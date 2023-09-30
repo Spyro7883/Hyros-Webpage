@@ -2,8 +2,12 @@
 
 footer {
     &.container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         background: #101010;
-        padding: 2.5rem .75rem;
+        padding: 2.5rem 0;
+        gap: 3rem;
     }
 }
 
@@ -22,20 +26,8 @@ p {
         line-height: 1.375rem;
     }
 
-    &.row {
-        display: none;
-        line-height: 1.25rem;
-        color: rgb(201, 201, 220);
-        text-decoration: none;
-        font-size: 0.875rem;
-        font-weight: 500;
-        text-align: start
-    }
-
     &.copyright {
         @include mixins.font_reusable("Inter", 600, 1rem);
-        margin-inline: 1rem;
-        margin-block-start: 3rem;
         color: #76768D;
         line-height: 1.5rem;
     }
@@ -44,7 +36,6 @@ p {
 
 div {
     &.layout {
-        margin-inline: 1rem;
         max-width: 1142px
     }
 
@@ -57,13 +48,69 @@ div {
         min-height: 3rem;
         align-items: center;
     }
+
+    &.copyright-container {
+        max-width: 1142px;
+        width: 100%;
+    }
+}
+
+a {
+    &.row {
+        display: none;
+        line-height: 1.25rem;
+        color: rgb(201, 201, 220);
+        text-decoration: none;
+        font-size: 0.875rem;
+        font-weight: 500;
+        text-align: start;
+        transition: all 0.3s ease-out 0s;
+        cursor: pointer;
+
+        &:hover {
+            color: rgb(237, 239, 248);
+            outline: 0;
+        }
+
+        &:focus-visible {
+            outline: .1rem solid white;
+        }
+    }
+}
+
+@media screen and (min-width: 287px) {
+    footer {
+        &.container {
+            padding: 2.5rem .75rem;
+        }
+    }
+
+    div {
+        &.layout {
+            padding-inline: 1rem;
+            width: 100%;
+        }
+
+    }
+
+    p {
+        &.copyright {
+            padding-inline: 1rem;
+        }
+    }
 }
 
 @media screen and (min-width: 641px) {
+    footer {
+        &.container {
+            gap: 6.75rem;
+            padding: 4.75rem 0 4rem;
+        }
+    }
+
     div {
         &.layout {
             display: flex;
-            margin-block-end: 6.75rem;
         }
 
         &.title-container {
@@ -80,7 +127,7 @@ div {
     p {
         &.title {
             @include mixins.font_reusable(inherit, 600, 1.125rem);
-            line-height: 2;
+            line-height: 36px;
         }
 
         &.row-title {
@@ -88,14 +135,57 @@ div {
             margin-block-end: .75rem;
         }
 
-        &.row {
-            display: block;
+        &.copyright {
+            font-size: .875rem;
+            line-height: 1.25rem;
         }
     }
 
     img {
         &.arrow {
             display: none;
+        }
+    }
+
+    a {
+        &.row {
+            display: block;
+        }
+    }
+}
+
+@media screen and (min-width: 681px) {
+    a {
+        &.row {
+            padding: .625rem .75rem;
+
+            &:hover {
+                border-radius: .25rem;
+                color: rgb(237, 239, 248);
+                background: rgb(49, 47, 59);
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 860px) {
+    div {
+        &.title-container {
+            flex-basis: 33.33%;
+        }
+
+        &.wrapper {
+            flex-basis: 17%;
+
+            &:last-child {
+                flex-basis: 15.7%;
+            }
+        }
+    }
+
+    p {
+        &.title {
+            font-size: 1.5rem;
         }
     }
 }
